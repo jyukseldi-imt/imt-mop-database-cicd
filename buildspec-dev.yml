@@ -1,0 +1,28 @@
+version: 0.2
+
+env:
+  variables:
+    LABEL_FILTER: test
+    CONTEXTS: dev
+
+phases:
+  install:
+    runtime-versions:
+      java: corretto17
+    commands:
+      - wget https://github.com/liquibase/liquibase/releases/download/v4.27.0/liquibase-4.27.0.zip
+      - unzip liquibase-4.27.0.zip -d liquibase
+      - chmod +x liquibase/liquibase
+      - curl -L -o mysql-connector-j.jar https://repo1.maven.org/maven2/com/mysql/mysql-connector-j/8.3.0/mysql-connector-j-8.3.0.jar
+      - yum -y install jq
+  pre_build:
+    commands:
+      - SECRET_JSON=$(aws secretsmanager get-secret-value --secret-id mop-dev-db-schemadeployuser-credentials --query SecretString --output text)
+      - DB_HOST=$(echo "$SECRET_JSON" | jq -r '.host')
+      - DB_PORT=$(echo "$SECRET_JSON" | jq -r '.port')
+      - DB_NAME=$(echo "$SECRET_JSON" | jq -r '.dbname')
+      - DB_USER=$(echo "$SECRET_JSON" | jq -r '.username')
+      - DB_PASS=$(echo "$SECRET_JSON" | jq -r '.password')
+  build:
+    commands:
+      - ./liquibase/liquibase --classpath=mysql-connector-j.jar --defaultsFile=liquibase.properties --changelog-file=changelog/db.changelog-master.xml --url="jdbc:mysql://${DB_HOST}:${DB_PORT}/${DB_NAME}" --username="${DB_USER}" --password="${DB_PASS}" --label-filter="${LABEL_FILTER}" --contexts="${CONTEXTS}" update

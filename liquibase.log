@@ -1,0 +1,2706 @@
+[2026-04-14 17:17:30] INFO [liquibase.ui] ####################################################
+##   _     _             _ _                      ##
+##  | |   (_)           (_) |                     ##
+##  | |    _  __ _ _   _ _| |__   __ _ ___  ___   ##
+##  | |   | |/ _` | | | | | '_ \ / _` / __|/ _ \  ##
+##  | |___| | (_| | |_| | | |_) | (_| \__ \  __/  ##
+##  \_____/_|\__, |\__,_|_|_.__/ \__,_|___/\___|  ##
+##              | |                               ##
+##              |_|                               ##
+##                                                ## 
+##  Get documentation at docs.liquibase.com       ##
+##  Get certified courses at learn.liquibase.com  ## 
+##                                                ##
+####################################################
+Starting Liquibase at 17:17:30 using Java 21.0.5 (version 4.30.0 #4943 built at 2024-10-31 17:00+0000)
+[2026-04-14 17:17:30] INFO [liquibase.ui] Liquibase Version: 4.30.0
+[2026-04-14 17:17:30] INFO [liquibase.ui] Liquibase Open Source 4.30.0 by Liquibase
+[2026-04-14 17:17:30] INFO [liquibase.integration] Starting command execution.
+[2026-04-14 17:17:30] WARNING [liquibase.command] Ignoring the global liquibase.driver value in favor of the command value.
+[2026-04-14 17:17:40] INFO [liquibase.command] Logging exception.
+[2026-04-14 17:17:40] INFO [liquibase.ui] ERROR: Exception Details
+[2026-04-14 17:17:40] INFO [liquibase.ui] ERROR: Exception Primary Class:  RuntimeException
+[2026-04-14 17:17:40] INFO [liquibase.ui] ERROR: Exception Primary Reason:  Cannot find database driver: com.mysql.cj.jdbc.Driver
+[2026-04-14 17:17:40] INFO [liquibase.ui] ERROR: Exception Primary Source:  4.30.0
+[2026-04-14 17:17:40] INFO [liquibase.command] Command execution complete
+[2026-04-14 17:17:41] SEVERE [liquibase.integration] Cannot find database driver: com.mysql.cj.jdbc.Driver
+liquibase.exception.CommandExecutionException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: java.lang.RuntimeException: Cannot find database driver: com.mysql.cj.jdbc.Driver
+	at liquibase.command.CommandScope.lambda$execute$6(CommandScope.java:278)
+	at liquibase.Scope.child(Scope.java:203)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.command.CommandScope.execute(CommandScope.java:219)
+	at liquibase.integration.commandline.CommandRunner.call(CommandRunner.java:51)
+	at liquibase.integration.commandline.CommandRunner.call(CommandRunner.java:21)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2045)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2465)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2457)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2419)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2277)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2421)
+	at picocli.CommandLine.execute(CommandLine.java:2174)
+	at liquibase.integration.commandline.LiquibaseCommandLine.lambda$execute$2(LiquibaseCommandLine.java:391)
+	at liquibase.Scope.child(Scope.java:203)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.integration.commandline.LiquibaseCommandLine.lambda$execute$3(LiquibaseCommandLine.java:366)
+	at liquibase.Scope.child(Scope.java:203)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.integration.commandline.LiquibaseCommandLine.execute(LiquibaseCommandLine.java:363)
+	at liquibase.integration.commandline.LiquibaseCommandLine.main(LiquibaseCommandLine.java:98)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at liquibase.integration.commandline.LiquibaseLauncher.main(LiquibaseLauncher.java:116)
+Caused by: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: java.lang.RuntimeException: Cannot find database driver: com.mysql.cj.jdbc.Driver
+	at liquibase.command.core.helpers.AbstractDatabaseConnectionCommandStep.createDatabaseObject(AbstractDatabaseConnectionCommandStep.java:106)
+	at liquibase.command.core.helpers.DbUrlConnectionCommandStep.obtainDatabase(DbUrlConnectionCommandStep.java:106)
+	at liquibase.command.core.helpers.DbUrlConnectionCommandStep.run(DbUrlConnectionCommandStep.java:83)
+	at liquibase.command.CommandScope.lambda$execute$6(CommandScope.java:231)
+	... 24 more
+Caused by: liquibase.exception.DatabaseException: java.lang.RuntimeException: Cannot find database driver: com.mysql.cj.jdbc.Driver
+	at liquibase.database.DatabaseFactory.openConnection(DatabaseFactory.java:241)
+	at liquibase.database.DatabaseFactory.openConnection(DatabaseFactory.java:188)
+	at liquibase.database.DatabaseFactory.openDatabase(DatabaseFactory.java:153)
+	at liquibase.command.core.helpers.AbstractDatabaseConnectionCommandStep.createDatabaseObject(AbstractDatabaseConnectionCommandStep.java:74)
+	... 27 more
+Caused by: java.lang.RuntimeException: Cannot find database driver: com.mysql.cj.jdbc.Driver
+	at liquibase.database.DatabaseFactory.loadDriver(DatabaseFactory.java:304)
+	at liquibase.database.DatabaseFactory.openConnection(DatabaseFactory.java:225)
+	... 30 more
+
+[2026-04-14 17:17:41] INFO [liquibase.ui] Logs saved to liquibase.log
+[2026-04-14 17:21:41] INFO [liquibase.ui] ####################################################
+##   _     _             _ _                      ##
+##  | |   (_)           (_) |                     ##
+##  | |    _  __ _ _   _ _| |__   __ _ ___  ___   ##
+##  | |   | |/ _` | | | | | '_ \ / _` / __|/ _ \  ##
+##  | |___| | (_| | |_| | | |_) | (_| \__ \  __/  ##
+##  \_____/_|\__, |\__,_|_|_.__/ \__,_|___/\___|  ##
+##              | |                               ##
+##              |_|                               ##
+##                                                ## 
+##  Get documentation at docs.liquibase.com       ##
+##  Get certified courses at learn.liquibase.com  ## 
+##                                                ##
+####################################################
+Starting Liquibase at 17:21:41 using Java 21.0.5 (version 4.30.0 #4943 built at 2024-10-31 17:00+0000)
+[2026-04-14 17:21:41] INFO [liquibase.ui] Liquibase Version: 4.30.0
+[2026-04-14 17:21:41] INFO [liquibase.ui] Liquibase Open Source 4.30.0 by Liquibase
+[2026-04-14 17:21:41] INFO [liquibase.integration] Starting command execution.
+[2026-04-14 17:21:41] WARNING [liquibase.command] Ignoring the global liquibase.driver value in favor of the command value.
+[2026-04-14 17:21:50] INFO [liquibase.command] Logging exception.
+[2026-04-14 17:21:50] INFO [liquibase.ui] ERROR: Exception Details
+[2026-04-14 17:21:50] INFO [liquibase.ui] ERROR: Exception Primary Class:  ChangeLogParseException
+[2026-04-14 17:21:50] INFO [liquibase.ui] ERROR: Exception Primary Reason:  The file changelog/db.changelog-master.xml was not found in the configured search path:
+    - C:\Repos\liquibase_mopdb
+    - C:\Program Files\liquibase\internal\lib\liquibase-core.jar
+    - C:\Program Files\liquibase\lib\mysql-connector-j-9.6.0.jar
+    - C:\Program Files\liquibase\lib
+    - C:\Program Files\liquibase\internal\lib\commons-collections4.jar
+    - C:\Program Files\liquibase\internal\lib\commons-io.jar
+    - C:\Program Files\liquibase\internal\lib\commons-lang3.jar
+    - C:\Program Files\liquibase\internal\lib\commons-text.jar
+    - C:\Program Files\liquibase\internal\lib\h2.jar
+    - C:\Program Files\liquibase\internal\lib\hsqldb.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-api.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-core.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-runtime.jar
+    - C:\Program Files\liquibase\internal\lib\jaybird.jar
+    - C:\Program Files\liquibase\internal\lib\jcc.jar
+    - C:\Program Files\liquibase\internal\lib\liquibase-commercial.jar
+    - C:\Program Files\liquibase\internal\lib\mariadb-java-client.jar
+    - C:\Program Files\liquibase\internal\lib\mssql-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib\ojdbc8.jar
+    - C:\Program Files\liquibase\internal\lib\opencsv.jar
+    - C:\Program Files\liquibase\internal\lib\picocli.jar
+    - C:\Program Files\liquibase\internal\lib\postgresql.jar
+    - C:\Program Files\liquibase\internal\lib\slf4j-api.jar
+    - C:\Program Files\liquibase\internal\lib\slf4j-simple.jar
+    - C:\Program Files\liquibase\internal\lib\snakeyaml.jar
+    - C:\Program Files\liquibase\internal\lib\snowflake-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib\sqlite-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib
+    - C:\Program Files\liquibase\internal\extensions\liquibase-commercial-bigquery.jar
+    - C:\Program Files\liquibase\internal\extensions
+More locations can be added with the 'searchPath' parameter.
+[2026-04-14 17:21:50] INFO [liquibase.ui] ERROR: Exception Primary Source:  4.30.0
+[2026-04-14 17:21:50] INFO [liquibase.command] Command execution complete
+[2026-04-14 17:21:51] SEVERE [liquibase.integration] The file changelog/db.changelog-master.xml was not found in the configured search path:
+    - C:\Repos\liquibase_mopdb
+    - C:\Program Files\liquibase\internal\lib\liquibase-core.jar
+    - C:\Program Files\liquibase\lib\mysql-connector-j-9.6.0.jar
+    - C:\Program Files\liquibase\lib
+    - C:\Program Files\liquibase\internal\lib\commons-collections4.jar
+    - C:\Program Files\liquibase\internal\lib\commons-io.jar
+    - C:\Program Files\liquibase\internal\lib\commons-lang3.jar
+    - C:\Program Files\liquibase\internal\lib\commons-text.jar
+    - C:\Program Files\liquibase\internal\lib\h2.jar
+    - C:\Program Files\liquibase\internal\lib\hsqldb.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-api.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-core.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-runtime.jar
+    - C:\Program Files\liquibase\internal\lib\jaybird.jar
+    - C:\Program Files\liquibase\internal\lib\jcc.jar
+    - C:\Program Files\liquibase\internal\lib\liquibase-commercial.jar
+    - C:\Program Files\liquibase\internal\lib\mariadb-java-client.jar
+    - C:\Program Files\liquibase\internal\lib\mssql-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib\ojdbc8.jar
+    - C:\Program Files\liquibase\internal\lib\opencsv.jar
+    - C:\Program Files\liquibase\internal\lib\picocli.jar
+    - C:\Program Files\liquibase\internal\lib\postgresql.jar
+    - C:\Program Files\liquibase\internal\lib\slf4j-api.jar
+    - C:\Program Files\liquibase\internal\lib\slf4j-simple.jar
+    - C:\Program Files\liquibase\internal\lib\snakeyaml.jar
+    - C:\Program Files\liquibase\internal\lib\snowflake-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib\sqlite-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib
+    - C:\Program Files\liquibase\internal\extensions\liquibase-commercial-bigquery.jar
+    - C:\Program Files\liquibase\internal\extensions
+More locations can be added with the 'searchPath' parameter.
+liquibase.exception.CommandExecutionException: liquibase.exception.ChangeLogParseException: The file changelog/db.changelog-master.xml was not found in the configured search path:
+    - C:\Repos\liquibase_mopdb
+    - C:\Program Files\liquibase\internal\lib\liquibase-core.jar
+    - C:\Program Files\liquibase\lib\mysql-connector-j-9.6.0.jar
+    - C:\Program Files\liquibase\lib
+    - C:\Program Files\liquibase\internal\lib\commons-collections4.jar
+    - C:\Program Files\liquibase\internal\lib\commons-io.jar
+    - C:\Program Files\liquibase\internal\lib\commons-lang3.jar
+    - C:\Program Files\liquibase\internal\lib\commons-text.jar
+    - C:\Program Files\liquibase\internal\lib\h2.jar
+    - C:\Program Files\liquibase\internal\lib\hsqldb.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-api.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-core.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-runtime.jar
+    - C:\Program Files\liquibase\internal\lib\jaybird.jar
+    - C:\Program Files\liquibase\internal\lib\jcc.jar
+    - C:\Program Files\liquibase\internal\lib\liquibase-commercial.jar
+    - C:\Program Files\liquibase\internal\lib\mariadb-java-client.jar
+    - C:\Program Files\liquibase\internal\lib\mssql-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib\ojdbc8.jar
+    - C:\Program Files\liquibase\internal\lib\opencsv.jar
+    - C:\Program Files\liquibase\internal\lib\picocli.jar
+    - C:\Program Files\liquibase\internal\lib\postgresql.jar
+    - C:\Program Files\liquibase\internal\lib\slf4j-api.jar
+    - C:\Program Files\liquibase\internal\lib\slf4j-simple.jar
+    - C:\Program Files\liquibase\internal\lib\snakeyaml.jar
+    - C:\Program Files\liquibase\internal\lib\snowflake-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib\sqlite-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib
+    - C:\Program Files\liquibase\internal\extensions\liquibase-commercial-bigquery.jar
+    - C:\Program Files\liquibase\internal\extensions
+More locations can be added with the 'searchPath' parameter.
+	at liquibase.command.CommandScope.lambda$execute$6(CommandScope.java:278)
+	at liquibase.Scope.child(Scope.java:203)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.command.CommandScope.execute(CommandScope.java:219)
+	at liquibase.integration.commandline.CommandRunner.call(CommandRunner.java:51)
+	at liquibase.integration.commandline.CommandRunner.call(CommandRunner.java:21)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2045)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2465)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2457)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2419)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2277)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2421)
+	at picocli.CommandLine.execute(CommandLine.java:2174)
+	at liquibase.integration.commandline.LiquibaseCommandLine.lambda$execute$2(LiquibaseCommandLine.java:391)
+	at liquibase.Scope.child(Scope.java:203)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.integration.commandline.LiquibaseCommandLine.lambda$execute$3(LiquibaseCommandLine.java:366)
+	at liquibase.Scope.child(Scope.java:203)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.integration.commandline.LiquibaseCommandLine.execute(LiquibaseCommandLine.java:363)
+	at liquibase.integration.commandline.LiquibaseCommandLine.main(LiquibaseCommandLine.java:98)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at liquibase.integration.commandline.LiquibaseLauncher.main(LiquibaseLauncher.java:116)
+Caused by: liquibase.exception.ChangeLogParseException: The file changelog/db.changelog-master.xml was not found in the configured search path:
+    - C:\Repos\liquibase_mopdb
+    - C:\Program Files\liquibase\internal\lib\liquibase-core.jar
+    - C:\Program Files\liquibase\lib\mysql-connector-j-9.6.0.jar
+    - C:\Program Files\liquibase\lib
+    - C:\Program Files\liquibase\internal\lib\commons-collections4.jar
+    - C:\Program Files\liquibase\internal\lib\commons-io.jar
+    - C:\Program Files\liquibase\internal\lib\commons-lang3.jar
+    - C:\Program Files\liquibase\internal\lib\commons-text.jar
+    - C:\Program Files\liquibase\internal\lib\h2.jar
+    - C:\Program Files\liquibase\internal\lib\hsqldb.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-api.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-core.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-runtime.jar
+    - C:\Program Files\liquibase\internal\lib\jaybird.jar
+    - C:\Program Files\liquibase\internal\lib\jcc.jar
+    - C:\Program Files\liquibase\internal\lib\liquibase-commercial.jar
+    - C:\Program Files\liquibase\internal\lib\mariadb-java-client.jar
+    - C:\Program Files\liquibase\internal\lib\mssql-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib\ojdbc8.jar
+    - C:\Program Files\liquibase\internal\lib\opencsv.jar
+    - C:\Program Files\liquibase\internal\lib\picocli.jar
+    - C:\Program Files\liquibase\internal\lib\postgresql.jar
+    - C:\Program Files\liquibase\internal\lib\slf4j-api.jar
+    - C:\Program Files\liquibase\internal\lib\slf4j-simple.jar
+    - C:\Program Files\liquibase\internal\lib\snakeyaml.jar
+    - C:\Program Files\liquibase\internal\lib\snowflake-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib\sqlite-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib
+    - C:\Program Files\liquibase\internal\extensions\liquibase-commercial-bigquery.jar
+    - C:\Program Files\liquibase\internal\extensions
+More locations can be added with the 'searchPath' parameter.
+	at liquibase.parser.core.xml.XMLChangeLogSAXParser.parseToNode(XMLChangeLogSAXParser.java:117)
+	at liquibase.parser.core.xml.AbstractChangeLogParser.parse(AbstractChangeLogParser.java:15)
+	at liquibase.command.core.helpers.DatabaseChangelogCommandStep.lambda$getDatabaseChangeLog$0(DatabaseChangelogCommandStep.java:129)
+	at liquibase.Scope.child(Scope.java:203)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.command.core.helpers.DatabaseChangelogCommandStep.getDatabaseChangeLog(DatabaseChangelogCommandStep.java:128)
+	at liquibase.command.core.helpers.DatabaseChangelogCommandStep.run(DatabaseChangelogCommandStep.java:87)
+	at liquibase.command.CommandScope.lambda$execute$6(CommandScope.java:231)
+	... 24 more
+
+[2026-04-14 17:21:51] INFO [liquibase.ui] Logs saved to liquibase.log
+[2026-04-14 17:23:30] INFO [liquibase.ui] ####################################################
+##   _     _             _ _                      ##
+##  | |   (_)           (_) |                     ##
+##  | |    _  __ _ _   _ _| |__   __ _ ___  ___   ##
+##  | |   | |/ _` | | | | | '_ \ / _` / __|/ _ \  ##
+##  | |___| | (_| | |_| | | |_) | (_| \__ \  __/  ##
+##  \_____/_|\__, |\__,_|_|_.__/ \__,_|___/\___|  ##
+##              | |                               ##
+##              |_|                               ##
+##                                                ## 
+##  Get documentation at docs.liquibase.com       ##
+##  Get certified courses at learn.liquibase.com  ## 
+##                                                ##
+####################################################
+Starting Liquibase at 17:23:30 using Java 21.0.5 (version 4.30.0 #4943 built at 2024-10-31 17:00+0000)
+[2026-04-14 17:23:30] INFO [liquibase.ui] Liquibase Version: 4.30.0
+[2026-04-14 17:23:30] INFO [liquibase.ui] Liquibase Open Source 4.30.0 by Liquibase
+[2026-04-14 17:23:30] INFO [liquibase.integration] Starting command execution.
+[2026-04-14 17:23:30] WARNING [liquibase.command] Ignoring the global liquibase.driver value in favor of the command value.
+[2026-04-14 17:23:35] INFO [liquibase.command] Logging exception.
+[2026-04-14 17:23:35] INFO [liquibase.ui] ERROR: Exception Details
+[2026-04-14 17:23:35] INFO [liquibase.ui] ERROR: Exception Primary Class:  ChangeLogParseException
+[2026-04-14 17:23:35] INFO [liquibase.ui] ERROR: Exception Primary Reason:  The file changelog/db.changelog-master.xml was not found in the configured search path:
+    - C:\Repos\liquibase_mopdb
+    - C:\Program Files\liquibase\internal\lib\liquibase-core.jar
+    - C:\Program Files\liquibase\lib\mysql-connector-j-9.6.0.jar
+    - C:\Program Files\liquibase\lib
+    - C:\Program Files\liquibase\internal\lib\commons-collections4.jar
+    - C:\Program Files\liquibase\internal\lib\commons-io.jar
+    - C:\Program Files\liquibase\internal\lib\commons-lang3.jar
+    - C:\Program Files\liquibase\internal\lib\commons-text.jar
+    - C:\Program Files\liquibase\internal\lib\h2.jar
+    - C:\Program Files\liquibase\internal\lib\hsqldb.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-api.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-core.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-runtime.jar
+    - C:\Program Files\liquibase\internal\lib\jaybird.jar
+    - C:\Program Files\liquibase\internal\lib\jcc.jar
+    - C:\Program Files\liquibase\internal\lib\liquibase-commercial.jar
+    - C:\Program Files\liquibase\internal\lib\mariadb-java-client.jar
+    - C:\Program Files\liquibase\internal\lib\mssql-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib\ojdbc8.jar
+    - C:\Program Files\liquibase\internal\lib\opencsv.jar
+    - C:\Program Files\liquibase\internal\lib\picocli.jar
+    - C:\Program Files\liquibase\internal\lib\postgresql.jar
+    - C:\Program Files\liquibase\internal\lib\slf4j-api.jar
+    - C:\Program Files\liquibase\internal\lib\slf4j-simple.jar
+    - C:\Program Files\liquibase\internal\lib\snakeyaml.jar
+    - C:\Program Files\liquibase\internal\lib\snowflake-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib\sqlite-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib
+    - C:\Program Files\liquibase\internal\extensions\liquibase-commercial-bigquery.jar
+    - C:\Program Files\liquibase\internal\extensions
+More locations can be added with the 'searchPath' parameter.
+[2026-04-14 17:23:35] INFO [liquibase.ui] ERROR: Exception Primary Source:  4.30.0
+[2026-04-14 17:23:35] INFO [liquibase.command] Command execution complete
+[2026-04-14 17:23:36] SEVERE [liquibase.integration] The file changelog/db.changelog-master.xml was not found in the configured search path:
+    - C:\Repos\liquibase_mopdb
+    - C:\Program Files\liquibase\internal\lib\liquibase-core.jar
+    - C:\Program Files\liquibase\lib\mysql-connector-j-9.6.0.jar
+    - C:\Program Files\liquibase\lib
+    - C:\Program Files\liquibase\internal\lib\commons-collections4.jar
+    - C:\Program Files\liquibase\internal\lib\commons-io.jar
+    - C:\Program Files\liquibase\internal\lib\commons-lang3.jar
+    - C:\Program Files\liquibase\internal\lib\commons-text.jar
+    - C:\Program Files\liquibase\internal\lib\h2.jar
+    - C:\Program Files\liquibase\internal\lib\hsqldb.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-api.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-core.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-runtime.jar
+    - C:\Program Files\liquibase\internal\lib\jaybird.jar
+    - C:\Program Files\liquibase\internal\lib\jcc.jar
+    - C:\Program Files\liquibase\internal\lib\liquibase-commercial.jar
+    - C:\Program Files\liquibase\internal\lib\mariadb-java-client.jar
+    - C:\Program Files\liquibase\internal\lib\mssql-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib\ojdbc8.jar
+    - C:\Program Files\liquibase\internal\lib\opencsv.jar
+    - C:\Program Files\liquibase\internal\lib\picocli.jar
+    - C:\Program Files\liquibase\internal\lib\postgresql.jar
+    - C:\Program Files\liquibase\internal\lib\slf4j-api.jar
+    - C:\Program Files\liquibase\internal\lib\slf4j-simple.jar
+    - C:\Program Files\liquibase\internal\lib\snakeyaml.jar
+    - C:\Program Files\liquibase\internal\lib\snowflake-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib\sqlite-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib
+    - C:\Program Files\liquibase\internal\extensions\liquibase-commercial-bigquery.jar
+    - C:\Program Files\liquibase\internal\extensions
+More locations can be added with the 'searchPath' parameter.
+liquibase.exception.CommandExecutionException: liquibase.exception.ChangeLogParseException: The file changelog/db.changelog-master.xml was not found in the configured search path:
+    - C:\Repos\liquibase_mopdb
+    - C:\Program Files\liquibase\internal\lib\liquibase-core.jar
+    - C:\Program Files\liquibase\lib\mysql-connector-j-9.6.0.jar
+    - C:\Program Files\liquibase\lib
+    - C:\Program Files\liquibase\internal\lib\commons-collections4.jar
+    - C:\Program Files\liquibase\internal\lib\commons-io.jar
+    - C:\Program Files\liquibase\internal\lib\commons-lang3.jar
+    - C:\Program Files\liquibase\internal\lib\commons-text.jar
+    - C:\Program Files\liquibase\internal\lib\h2.jar
+    - C:\Program Files\liquibase\internal\lib\hsqldb.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-api.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-core.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-runtime.jar
+    - C:\Program Files\liquibase\internal\lib\jaybird.jar
+    - C:\Program Files\liquibase\internal\lib\jcc.jar
+    - C:\Program Files\liquibase\internal\lib\liquibase-commercial.jar
+    - C:\Program Files\liquibase\internal\lib\mariadb-java-client.jar
+    - C:\Program Files\liquibase\internal\lib\mssql-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib\ojdbc8.jar
+    - C:\Program Files\liquibase\internal\lib\opencsv.jar
+    - C:\Program Files\liquibase\internal\lib\picocli.jar
+    - C:\Program Files\liquibase\internal\lib\postgresql.jar
+    - C:\Program Files\liquibase\internal\lib\slf4j-api.jar
+    - C:\Program Files\liquibase\internal\lib\slf4j-simple.jar
+    - C:\Program Files\liquibase\internal\lib\snakeyaml.jar
+    - C:\Program Files\liquibase\internal\lib\snowflake-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib\sqlite-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib
+    - C:\Program Files\liquibase\internal\extensions\liquibase-commercial-bigquery.jar
+    - C:\Program Files\liquibase\internal\extensions
+More locations can be added with the 'searchPath' parameter.
+	at liquibase.command.CommandScope.lambda$execute$6(CommandScope.java:278)
+	at liquibase.Scope.child(Scope.java:203)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.command.CommandScope.execute(CommandScope.java:219)
+	at liquibase.integration.commandline.CommandRunner.call(CommandRunner.java:51)
+	at liquibase.integration.commandline.CommandRunner.call(CommandRunner.java:21)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2045)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2465)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2457)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2419)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2277)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2421)
+	at picocli.CommandLine.execute(CommandLine.java:2174)
+	at liquibase.integration.commandline.LiquibaseCommandLine.lambda$execute$2(LiquibaseCommandLine.java:391)
+	at liquibase.Scope.child(Scope.java:203)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.integration.commandline.LiquibaseCommandLine.lambda$execute$3(LiquibaseCommandLine.java:366)
+	at liquibase.Scope.child(Scope.java:203)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.integration.commandline.LiquibaseCommandLine.execute(LiquibaseCommandLine.java:363)
+	at liquibase.integration.commandline.LiquibaseCommandLine.main(LiquibaseCommandLine.java:98)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at liquibase.integration.commandline.LiquibaseLauncher.main(LiquibaseLauncher.java:116)
+Caused by: liquibase.exception.ChangeLogParseException: The file changelog/db.changelog-master.xml was not found in the configured search path:
+    - C:\Repos\liquibase_mopdb
+    - C:\Program Files\liquibase\internal\lib\liquibase-core.jar
+    - C:\Program Files\liquibase\lib\mysql-connector-j-9.6.0.jar
+    - C:\Program Files\liquibase\lib
+    - C:\Program Files\liquibase\internal\lib\commons-collections4.jar
+    - C:\Program Files\liquibase\internal\lib\commons-io.jar
+    - C:\Program Files\liquibase\internal\lib\commons-lang3.jar
+    - C:\Program Files\liquibase\internal\lib\commons-text.jar
+    - C:\Program Files\liquibase\internal\lib\h2.jar
+    - C:\Program Files\liquibase\internal\lib\hsqldb.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-api.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-core.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-runtime.jar
+    - C:\Program Files\liquibase\internal\lib\jaybird.jar
+    - C:\Program Files\liquibase\internal\lib\jcc.jar
+    - C:\Program Files\liquibase\internal\lib\liquibase-commercial.jar
+    - C:\Program Files\liquibase\internal\lib\mariadb-java-client.jar
+    - C:\Program Files\liquibase\internal\lib\mssql-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib\ojdbc8.jar
+    - C:\Program Files\liquibase\internal\lib\opencsv.jar
+    - C:\Program Files\liquibase\internal\lib\picocli.jar
+    - C:\Program Files\liquibase\internal\lib\postgresql.jar
+    - C:\Program Files\liquibase\internal\lib\slf4j-api.jar
+    - C:\Program Files\liquibase\internal\lib\slf4j-simple.jar
+    - C:\Program Files\liquibase\internal\lib\snakeyaml.jar
+    - C:\Program Files\liquibase\internal\lib\snowflake-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib\sqlite-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib
+    - C:\Program Files\liquibase\internal\extensions\liquibase-commercial-bigquery.jar
+    - C:\Program Files\liquibase\internal\extensions
+More locations can be added with the 'searchPath' parameter.
+	at liquibase.parser.core.xml.XMLChangeLogSAXParser.parseToNode(XMLChangeLogSAXParser.java:117)
+	at liquibase.parser.core.xml.AbstractChangeLogParser.parse(AbstractChangeLogParser.java:15)
+	at liquibase.command.core.helpers.DatabaseChangelogCommandStep.lambda$getDatabaseChangeLog$0(DatabaseChangelogCommandStep.java:129)
+	at liquibase.Scope.child(Scope.java:203)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.command.core.helpers.DatabaseChangelogCommandStep.getDatabaseChangeLog(DatabaseChangelogCommandStep.java:128)
+	at liquibase.command.core.helpers.DatabaseChangelogCommandStep.run(DatabaseChangelogCommandStep.java:87)
+	at liquibase.command.CommandScope.lambda$execute$6(CommandScope.java:231)
+	... 24 more
+
+[2026-04-14 17:23:36] INFO [liquibase.ui] Logs saved to liquibase.log
+[2026-04-14 17:51:19] INFO [liquibase.ui] ####################################################
+##   _     _             _ _                      ##
+##  | |   (_)           (_) |                     ##
+##  | |    _  __ _ _   _ _| |__   __ _ ___  ___   ##
+##  | |   | |/ _` | | | | | '_ \ / _` / __|/ _ \  ##
+##  | |___| | (_| | |_| | | |_) | (_| \__ \  __/  ##
+##  \_____/_|\__, |\__,_|_|_.__/ \__,_|___/\___|  ##
+##              | |                               ##
+##              |_|                               ##
+##                                                ## 
+##  Get documentation at docs.liquibase.com       ##
+##  Get certified courses at learn.liquibase.com  ## 
+##                                                ##
+####################################################
+Starting Liquibase at 17:51:19 using Java 21.0.5 (version 4.30.0 #4943 built at 2024-10-31 17:00+0000)
+[2026-04-14 17:51:19] INFO [liquibase.ui] Liquibase Version: 4.30.0
+[2026-04-14 17:51:19] INFO [liquibase.ui] Liquibase Open Source 4.30.0 by Liquibase
+[2026-04-14 17:51:19] INFO [liquibase.integration] Starting command execution.
+[2026-04-14 17:51:19] WARNING [liquibase.command] Ignoring the global liquibase.driver value in favor of the command value.
+[2026-04-14 17:51:22] INFO [liquibase.changelog] Creating database history table with name: mop.DATABASECHANGELOG
+[2026-04-14 17:51:23] INFO [liquibase.snapshot] Creating snapshot
+[2026-04-14 17:51:30] WARNING [liquibase.executor] View 'mop.vw_vendor_agreements' references invalid table(s) or column(s) or function(s) or definer/invoker of view lack rights to use them
+[2026-04-14 17:51:34] WARNING [liquibase.executor] View 'mop.vw_customer_entitlements' references invalid table(s) or column(s) or function(s) or definer/invoker of view lack rights to use them
+[2026-04-14 17:51:38] INFO [liquibase.changelog] Reading from mop.DATABASECHANGELOG
+[2026-04-14 17:51:39] INFO [liquibase.command] Command execution complete
+[2026-04-14 17:51:40] INFO [liquibase.ui] Logs saved to liquibase.log
+[2026-04-14 17:51:40] INFO [liquibase.ui] Liquibase command 'status' was executed successfully.
+[2026-04-14 17:51:53] INFO [liquibase.ui] ####################################################
+##   _     _             _ _                      ##
+##  | |   (_)           (_) |                     ##
+##  | |    _  __ _ _   _ _| |__   __ _ ___  ___   ##
+##  | |   | |/ _` | | | | | '_ \ / _` / __|/ _ \  ##
+##  | |___| | (_| | |_| | | |_) | (_| \__ \  __/  ##
+##  \_____/_|\__, |\__,_|_|_.__/ \__,_|___/\___|  ##
+##              | |                               ##
+##              |_|                               ##
+##                                                ## 
+##  Get documentation at docs.liquibase.com       ##
+##  Get certified courses at learn.liquibase.com  ## 
+##                                                ##
+####################################################
+Starting Liquibase at 17:51:53 using Java 21.0.5 (version 4.30.0 #4943 built at 2024-10-31 17:00+0000)
+[2026-04-14 17:51:53] INFO [liquibase.ui] Liquibase Version: 4.30.0
+[2026-04-14 17:51:53] INFO [liquibase.ui] Liquibase Open Source 4.30.0 by Liquibase
+[2026-04-14 17:51:53] INFO [liquibase.integration] Starting command execution.
+[2026-04-14 17:51:53] WARNING [liquibase.command] Ignoring the global liquibase.driver value in favor of the command value.
+[2026-04-14 17:51:57] INFO [liquibase.command] Logging exception.
+[2026-04-14 17:51:57] INFO [liquibase.ui] ERROR: Exception Details
+[2026-04-14 17:51:57] INFO [liquibase.ui] ERROR: Exception Primary Class:  ChangeLogParseException
+[2026-04-14 17:51:57] INFO [liquibase.ui] ERROR: Exception Primary Reason:  The file changelog/db.changelog-master.xml was not found in the configured search path:
+    - C:\Repos\liquibase_mopdb
+    - C:\Program Files\liquibase\internal\lib\liquibase-core.jar
+    - C:\Program Files\liquibase\lib\mysql-connector-j-9.6.0.jar
+    - C:\Program Files\liquibase\lib
+    - C:\Program Files\liquibase\internal\lib\commons-collections4.jar
+    - C:\Program Files\liquibase\internal\lib\commons-io.jar
+    - C:\Program Files\liquibase\internal\lib\commons-lang3.jar
+    - C:\Program Files\liquibase\internal\lib\commons-text.jar
+    - C:\Program Files\liquibase\internal\lib\h2.jar
+    - C:\Program Files\liquibase\internal\lib\hsqldb.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-api.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-core.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-runtime.jar
+    - C:\Program Files\liquibase\internal\lib\jaybird.jar
+    - C:\Program Files\liquibase\internal\lib\jcc.jar
+    - C:\Program Files\liquibase\internal\lib\liquibase-commercial.jar
+    - C:\Program Files\liquibase\internal\lib\mariadb-java-client.jar
+    - C:\Program Files\liquibase\internal\lib\mssql-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib\ojdbc8.jar
+    - C:\Program Files\liquibase\internal\lib\opencsv.jar
+    - C:\Program Files\liquibase\internal\lib\picocli.jar
+    - C:\Program Files\liquibase\internal\lib\postgresql.jar
+    - C:\Program Files\liquibase\internal\lib\slf4j-api.jar
+    - C:\Program Files\liquibase\internal\lib\slf4j-simple.jar
+    - C:\Program Files\liquibase\internal\lib\snakeyaml.jar
+    - C:\Program Files\liquibase\internal\lib\snowflake-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib\sqlite-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib
+    - C:\Program Files\liquibase\internal\extensions\liquibase-commercial-bigquery.jar
+    - C:\Program Files\liquibase\internal\extensions
+More locations can be added with the 'searchPath' parameter.
+[2026-04-14 17:51:57] INFO [liquibase.ui] ERROR: Exception Primary Source:  4.30.0
+[2026-04-14 17:51:57] INFO [liquibase.command] Command execution complete
+[2026-04-14 17:51:58] SEVERE [liquibase.integration] The file changelog/db.changelog-master.xml was not found in the configured search path:
+    - C:\Repos\liquibase_mopdb
+    - C:\Program Files\liquibase\internal\lib\liquibase-core.jar
+    - C:\Program Files\liquibase\lib\mysql-connector-j-9.6.0.jar
+    - C:\Program Files\liquibase\lib
+    - C:\Program Files\liquibase\internal\lib\commons-collections4.jar
+    - C:\Program Files\liquibase\internal\lib\commons-io.jar
+    - C:\Program Files\liquibase\internal\lib\commons-lang3.jar
+    - C:\Program Files\liquibase\internal\lib\commons-text.jar
+    - C:\Program Files\liquibase\internal\lib\h2.jar
+    - C:\Program Files\liquibase\internal\lib\hsqldb.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-api.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-core.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-runtime.jar
+    - C:\Program Files\liquibase\internal\lib\jaybird.jar
+    - C:\Program Files\liquibase\internal\lib\jcc.jar
+    - C:\Program Files\liquibase\internal\lib\liquibase-commercial.jar
+    - C:\Program Files\liquibase\internal\lib\mariadb-java-client.jar
+    - C:\Program Files\liquibase\internal\lib\mssql-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib\ojdbc8.jar
+    - C:\Program Files\liquibase\internal\lib\opencsv.jar
+    - C:\Program Files\liquibase\internal\lib\picocli.jar
+    - C:\Program Files\liquibase\internal\lib\postgresql.jar
+    - C:\Program Files\liquibase\internal\lib\slf4j-api.jar
+    - C:\Program Files\liquibase\internal\lib\slf4j-simple.jar
+    - C:\Program Files\liquibase\internal\lib\snakeyaml.jar
+    - C:\Program Files\liquibase\internal\lib\snowflake-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib\sqlite-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib
+    - C:\Program Files\liquibase\internal\extensions\liquibase-commercial-bigquery.jar
+    - C:\Program Files\liquibase\internal\extensions
+More locations can be added with the 'searchPath' parameter.
+liquibase.exception.CommandExecutionException: liquibase.exception.ChangeLogParseException: The file changelog/db.changelog-master.xml was not found in the configured search path:
+    - C:\Repos\liquibase_mopdb
+    - C:\Program Files\liquibase\internal\lib\liquibase-core.jar
+    - C:\Program Files\liquibase\lib\mysql-connector-j-9.6.0.jar
+    - C:\Program Files\liquibase\lib
+    - C:\Program Files\liquibase\internal\lib\commons-collections4.jar
+    - C:\Program Files\liquibase\internal\lib\commons-io.jar
+    - C:\Program Files\liquibase\internal\lib\commons-lang3.jar
+    - C:\Program Files\liquibase\internal\lib\commons-text.jar
+    - C:\Program Files\liquibase\internal\lib\h2.jar
+    - C:\Program Files\liquibase\internal\lib\hsqldb.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-api.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-core.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-runtime.jar
+    - C:\Program Files\liquibase\internal\lib\jaybird.jar
+    - C:\Program Files\liquibase\internal\lib\jcc.jar
+    - C:\Program Files\liquibase\internal\lib\liquibase-commercial.jar
+    - C:\Program Files\liquibase\internal\lib\mariadb-java-client.jar
+    - C:\Program Files\liquibase\internal\lib\mssql-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib\ojdbc8.jar
+    - C:\Program Files\liquibase\internal\lib\opencsv.jar
+    - C:\Program Files\liquibase\internal\lib\picocli.jar
+    - C:\Program Files\liquibase\internal\lib\postgresql.jar
+    - C:\Program Files\liquibase\internal\lib\slf4j-api.jar
+    - C:\Program Files\liquibase\internal\lib\slf4j-simple.jar
+    - C:\Program Files\liquibase\internal\lib\snakeyaml.jar
+    - C:\Program Files\liquibase\internal\lib\snowflake-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib\sqlite-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib
+    - C:\Program Files\liquibase\internal\extensions\liquibase-commercial-bigquery.jar
+    - C:\Program Files\liquibase\internal\extensions
+More locations can be added with the 'searchPath' parameter.
+	at liquibase.command.CommandScope.lambda$execute$6(CommandScope.java:278)
+	at liquibase.Scope.child(Scope.java:203)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.command.CommandScope.execute(CommandScope.java:219)
+	at liquibase.integration.commandline.CommandRunner.call(CommandRunner.java:51)
+	at liquibase.integration.commandline.CommandRunner.call(CommandRunner.java:21)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2045)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2465)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2457)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2419)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2277)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2421)
+	at picocli.CommandLine.execute(CommandLine.java:2174)
+	at liquibase.integration.commandline.LiquibaseCommandLine.lambda$execute$2(LiquibaseCommandLine.java:391)
+	at liquibase.Scope.child(Scope.java:203)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.integration.commandline.LiquibaseCommandLine.lambda$execute$3(LiquibaseCommandLine.java:366)
+	at liquibase.Scope.child(Scope.java:203)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.integration.commandline.LiquibaseCommandLine.execute(LiquibaseCommandLine.java:363)
+	at liquibase.integration.commandline.LiquibaseCommandLine.main(LiquibaseCommandLine.java:98)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at liquibase.integration.commandline.LiquibaseLauncher.main(LiquibaseLauncher.java:116)
+Caused by: liquibase.exception.ChangeLogParseException: The file changelog/db.changelog-master.xml was not found in the configured search path:
+    - C:\Repos\liquibase_mopdb
+    - C:\Program Files\liquibase\internal\lib\liquibase-core.jar
+    - C:\Program Files\liquibase\lib\mysql-connector-j-9.6.0.jar
+    - C:\Program Files\liquibase\lib
+    - C:\Program Files\liquibase\internal\lib\commons-collections4.jar
+    - C:\Program Files\liquibase\internal\lib\commons-io.jar
+    - C:\Program Files\liquibase\internal\lib\commons-lang3.jar
+    - C:\Program Files\liquibase\internal\lib\commons-text.jar
+    - C:\Program Files\liquibase\internal\lib\h2.jar
+    - C:\Program Files\liquibase\internal\lib\hsqldb.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-api.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-core.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-runtime.jar
+    - C:\Program Files\liquibase\internal\lib\jaybird.jar
+    - C:\Program Files\liquibase\internal\lib\jcc.jar
+    - C:\Program Files\liquibase\internal\lib\liquibase-commercial.jar
+    - C:\Program Files\liquibase\internal\lib\mariadb-java-client.jar
+    - C:\Program Files\liquibase\internal\lib\mssql-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib\ojdbc8.jar
+    - C:\Program Files\liquibase\internal\lib\opencsv.jar
+    - C:\Program Files\liquibase\internal\lib\picocli.jar
+    - C:\Program Files\liquibase\internal\lib\postgresql.jar
+    - C:\Program Files\liquibase\internal\lib\slf4j-api.jar
+    - C:\Program Files\liquibase\internal\lib\slf4j-simple.jar
+    - C:\Program Files\liquibase\internal\lib\snakeyaml.jar
+    - C:\Program Files\liquibase\internal\lib\snowflake-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib\sqlite-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib
+    - C:\Program Files\liquibase\internal\extensions\liquibase-commercial-bigquery.jar
+    - C:\Program Files\liquibase\internal\extensions
+More locations can be added with the 'searchPath' parameter.
+	at liquibase.parser.core.xml.XMLChangeLogSAXParser.parseToNode(XMLChangeLogSAXParser.java:117)
+	at liquibase.parser.core.xml.AbstractChangeLogParser.parse(AbstractChangeLogParser.java:15)
+	at liquibase.command.core.helpers.DatabaseChangelogCommandStep.lambda$getDatabaseChangeLog$0(DatabaseChangelogCommandStep.java:129)
+	at liquibase.Scope.child(Scope.java:203)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.command.core.helpers.DatabaseChangelogCommandStep.getDatabaseChangeLog(DatabaseChangelogCommandStep.java:128)
+	at liquibase.command.core.helpers.DatabaseChangelogCommandStep.run(DatabaseChangelogCommandStep.java:87)
+	at liquibase.command.CommandScope.lambda$execute$6(CommandScope.java:231)
+	... 24 more
+
+[2026-04-14 17:51:58] INFO [liquibase.ui] Logs saved to liquibase.log
+[2026-04-14 17:58:28] INFO [liquibase.ui] ####################################################
+##   _     _             _ _                      ##
+##  | |   (_)           (_) |                     ##
+##  | |    _  __ _ _   _ _| |__   __ _ ___  ___   ##
+##  | |   | |/ _` | | | | | '_ \ / _` / __|/ _ \  ##
+##  | |___| | (_| | |_| | | |_) | (_| \__ \  __/  ##
+##  \_____/_|\__, |\__,_|_|_.__/ \__,_|___/\___|  ##
+##              | |                               ##
+##              |_|                               ##
+##                                                ## 
+##  Get documentation at docs.liquibase.com       ##
+##  Get certified courses at learn.liquibase.com  ## 
+##                                                ##
+####################################################
+Starting Liquibase at 17:58:28 using Java 21.0.5 (version 4.30.0 #4943 built at 2024-10-31 17:00+0000)
+[2026-04-14 17:58:28] INFO [liquibase.ui] Liquibase Version: 4.30.0
+[2026-04-14 17:58:28] INFO [liquibase.ui] Liquibase Open Source 4.30.0 by Liquibase
+[2026-04-14 17:58:28] INFO [liquibase.integration] Starting command execution.
+[2026-04-14 17:58:28] WARNING [liquibase.command] Ignoring the global liquibase.driver value in favor of the command value.
+[2026-04-14 17:58:31] INFO [liquibase.command] Logging exception.
+[2026-04-14 17:58:31] INFO [liquibase.ui] ERROR: Exception Details
+[2026-04-14 17:58:31] INFO [liquibase.ui] ERROR: Exception Primary Class:  ChangeLogParseException
+[2026-04-14 17:58:31] INFO [liquibase.ui] ERROR: Exception Primary Reason:  The file changelog/db.changelog-master.xml was not found in the configured search path:
+    - C:\Repos\liquibase_mopdb
+    - C:\Program Files\liquibase\internal\lib\liquibase-core.jar
+    - C:\Program Files\liquibase\lib\mysql-connector-j-9.6.0.jar
+    - C:\Program Files\liquibase\lib
+    - C:\Program Files\liquibase\internal\lib\commons-collections4.jar
+    - C:\Program Files\liquibase\internal\lib\commons-io.jar
+    - C:\Program Files\liquibase\internal\lib\commons-lang3.jar
+    - C:\Program Files\liquibase\internal\lib\commons-text.jar
+    - C:\Program Files\liquibase\internal\lib\h2.jar
+    - C:\Program Files\liquibase\internal\lib\hsqldb.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-api.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-core.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-runtime.jar
+    - C:\Program Files\liquibase\internal\lib\jaybird.jar
+    - C:\Program Files\liquibase\internal\lib\jcc.jar
+    - C:\Program Files\liquibase\internal\lib\liquibase-commercial.jar
+    - C:\Program Files\liquibase\internal\lib\mariadb-java-client.jar
+    - C:\Program Files\liquibase\internal\lib\mssql-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib\ojdbc8.jar
+    - C:\Program Files\liquibase\internal\lib\opencsv.jar
+    - C:\Program Files\liquibase\internal\lib\picocli.jar
+    - C:\Program Files\liquibase\internal\lib\postgresql.jar
+    - C:\Program Files\liquibase\internal\lib\slf4j-api.jar
+    - C:\Program Files\liquibase\internal\lib\slf4j-simple.jar
+    - C:\Program Files\liquibase\internal\lib\snakeyaml.jar
+    - C:\Program Files\liquibase\internal\lib\snowflake-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib\sqlite-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib
+    - C:\Program Files\liquibase\internal\extensions\liquibase-commercial-bigquery.jar
+    - C:\Program Files\liquibase\internal\extensions
+More locations can be added with the 'searchPath' parameter.
+[2026-04-14 17:58:31] INFO [liquibase.ui] ERROR: Exception Primary Source:  4.30.0
+[2026-04-14 17:58:31] INFO [liquibase.command] Command execution complete
+[2026-04-14 17:58:32] SEVERE [liquibase.integration] The file changelog/db.changelog-master.xml was not found in the configured search path:
+    - C:\Repos\liquibase_mopdb
+    - C:\Program Files\liquibase\internal\lib\liquibase-core.jar
+    - C:\Program Files\liquibase\lib\mysql-connector-j-9.6.0.jar
+    - C:\Program Files\liquibase\lib
+    - C:\Program Files\liquibase\internal\lib\commons-collections4.jar
+    - C:\Program Files\liquibase\internal\lib\commons-io.jar
+    - C:\Program Files\liquibase\internal\lib\commons-lang3.jar
+    - C:\Program Files\liquibase\internal\lib\commons-text.jar
+    - C:\Program Files\liquibase\internal\lib\h2.jar
+    - C:\Program Files\liquibase\internal\lib\hsqldb.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-api.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-core.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-runtime.jar
+    - C:\Program Files\liquibase\internal\lib\jaybird.jar
+    - C:\Program Files\liquibase\internal\lib\jcc.jar
+    - C:\Program Files\liquibase\internal\lib\liquibase-commercial.jar
+    - C:\Program Files\liquibase\internal\lib\mariadb-java-client.jar
+    - C:\Program Files\liquibase\internal\lib\mssql-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib\ojdbc8.jar
+    - C:\Program Files\liquibase\internal\lib\opencsv.jar
+    - C:\Program Files\liquibase\internal\lib\picocli.jar
+    - C:\Program Files\liquibase\internal\lib\postgresql.jar
+    - C:\Program Files\liquibase\internal\lib\slf4j-api.jar
+    - C:\Program Files\liquibase\internal\lib\slf4j-simple.jar
+    - C:\Program Files\liquibase\internal\lib\snakeyaml.jar
+    - C:\Program Files\liquibase\internal\lib\snowflake-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib\sqlite-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib
+    - C:\Program Files\liquibase\internal\extensions\liquibase-commercial-bigquery.jar
+    - C:\Program Files\liquibase\internal\extensions
+More locations can be added with the 'searchPath' parameter.
+liquibase.exception.CommandExecutionException: liquibase.exception.ChangeLogParseException: The file changelog/db.changelog-master.xml was not found in the configured search path:
+    - C:\Repos\liquibase_mopdb
+    - C:\Program Files\liquibase\internal\lib\liquibase-core.jar
+    - C:\Program Files\liquibase\lib\mysql-connector-j-9.6.0.jar
+    - C:\Program Files\liquibase\lib
+    - C:\Program Files\liquibase\internal\lib\commons-collections4.jar
+    - C:\Program Files\liquibase\internal\lib\commons-io.jar
+    - C:\Program Files\liquibase\internal\lib\commons-lang3.jar
+    - C:\Program Files\liquibase\internal\lib\commons-text.jar
+    - C:\Program Files\liquibase\internal\lib\h2.jar
+    - C:\Program Files\liquibase\internal\lib\hsqldb.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-api.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-core.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-runtime.jar
+    - C:\Program Files\liquibase\internal\lib\jaybird.jar
+    - C:\Program Files\liquibase\internal\lib\jcc.jar
+    - C:\Program Files\liquibase\internal\lib\liquibase-commercial.jar
+    - C:\Program Files\liquibase\internal\lib\mariadb-java-client.jar
+    - C:\Program Files\liquibase\internal\lib\mssql-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib\ojdbc8.jar
+    - C:\Program Files\liquibase\internal\lib\opencsv.jar
+    - C:\Program Files\liquibase\internal\lib\picocli.jar
+    - C:\Program Files\liquibase\internal\lib\postgresql.jar
+    - C:\Program Files\liquibase\internal\lib\slf4j-api.jar
+    - C:\Program Files\liquibase\internal\lib\slf4j-simple.jar
+    - C:\Program Files\liquibase\internal\lib\snakeyaml.jar
+    - C:\Program Files\liquibase\internal\lib\snowflake-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib\sqlite-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib
+    - C:\Program Files\liquibase\internal\extensions\liquibase-commercial-bigquery.jar
+    - C:\Program Files\liquibase\internal\extensions
+More locations can be added with the 'searchPath' parameter.
+	at liquibase.command.CommandScope.lambda$execute$6(CommandScope.java:278)
+	at liquibase.Scope.child(Scope.java:203)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.command.CommandScope.execute(CommandScope.java:219)
+	at liquibase.integration.commandline.CommandRunner.call(CommandRunner.java:51)
+	at liquibase.integration.commandline.CommandRunner.call(CommandRunner.java:21)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2045)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2465)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2457)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2419)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2277)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2421)
+	at picocli.CommandLine.execute(CommandLine.java:2174)
+	at liquibase.integration.commandline.LiquibaseCommandLine.lambda$execute$2(LiquibaseCommandLine.java:391)
+	at liquibase.Scope.child(Scope.java:203)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.integration.commandline.LiquibaseCommandLine.lambda$execute$3(LiquibaseCommandLine.java:366)
+	at liquibase.Scope.child(Scope.java:203)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.integration.commandline.LiquibaseCommandLine.execute(LiquibaseCommandLine.java:363)
+	at liquibase.integration.commandline.LiquibaseCommandLine.main(LiquibaseCommandLine.java:98)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at liquibase.integration.commandline.LiquibaseLauncher.main(LiquibaseLauncher.java:116)
+Caused by: liquibase.exception.ChangeLogParseException: The file changelog/db.changelog-master.xml was not found in the configured search path:
+    - C:\Repos\liquibase_mopdb
+    - C:\Program Files\liquibase\internal\lib\liquibase-core.jar
+    - C:\Program Files\liquibase\lib\mysql-connector-j-9.6.0.jar
+    - C:\Program Files\liquibase\lib
+    - C:\Program Files\liquibase\internal\lib\commons-collections4.jar
+    - C:\Program Files\liquibase\internal\lib\commons-io.jar
+    - C:\Program Files\liquibase\internal\lib\commons-lang3.jar
+    - C:\Program Files\liquibase\internal\lib\commons-text.jar
+    - C:\Program Files\liquibase\internal\lib\h2.jar
+    - C:\Program Files\liquibase\internal\lib\hsqldb.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-api.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-core.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-runtime.jar
+    - C:\Program Files\liquibase\internal\lib\jaybird.jar
+    - C:\Program Files\liquibase\internal\lib\jcc.jar
+    - C:\Program Files\liquibase\internal\lib\liquibase-commercial.jar
+    - C:\Program Files\liquibase\internal\lib\mariadb-java-client.jar
+    - C:\Program Files\liquibase\internal\lib\mssql-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib\ojdbc8.jar
+    - C:\Program Files\liquibase\internal\lib\opencsv.jar
+    - C:\Program Files\liquibase\internal\lib\picocli.jar
+    - C:\Program Files\liquibase\internal\lib\postgresql.jar
+    - C:\Program Files\liquibase\internal\lib\slf4j-api.jar
+    - C:\Program Files\liquibase\internal\lib\slf4j-simple.jar
+    - C:\Program Files\liquibase\internal\lib\snakeyaml.jar
+    - C:\Program Files\liquibase\internal\lib\snowflake-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib\sqlite-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib
+    - C:\Program Files\liquibase\internal\extensions\liquibase-commercial-bigquery.jar
+    - C:\Program Files\liquibase\internal\extensions
+More locations can be added with the 'searchPath' parameter.
+	at liquibase.parser.core.xml.XMLChangeLogSAXParser.parseToNode(XMLChangeLogSAXParser.java:117)
+	at liquibase.parser.core.xml.AbstractChangeLogParser.parse(AbstractChangeLogParser.java:15)
+	at liquibase.command.core.helpers.DatabaseChangelogCommandStep.lambda$getDatabaseChangeLog$0(DatabaseChangelogCommandStep.java:129)
+	at liquibase.Scope.child(Scope.java:203)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.command.core.helpers.DatabaseChangelogCommandStep.getDatabaseChangeLog(DatabaseChangelogCommandStep.java:128)
+	at liquibase.command.core.helpers.DatabaseChangelogCommandStep.run(DatabaseChangelogCommandStep.java:87)
+	at liquibase.command.CommandScope.lambda$execute$6(CommandScope.java:231)
+	... 24 more
+
+[2026-04-14 17:58:32] INFO [liquibase.ui] Logs saved to liquibase.log
+[2026-04-14 17:58:41] INFO [liquibase.ui] ####################################################
+##   _     _             _ _                      ##
+##  | |   (_)           (_) |                     ##
+##  | |    _  __ _ _   _ _| |__   __ _ ___  ___   ##
+##  | |   | |/ _` | | | | | '_ \ / _` / __|/ _ \  ##
+##  | |___| | (_| | |_| | | |_) | (_| \__ \  __/  ##
+##  \_____/_|\__, |\__,_|_|_.__/ \__,_|___/\___|  ##
+##              | |                               ##
+##              |_|                               ##
+##                                                ## 
+##  Get documentation at docs.liquibase.com       ##
+##  Get certified courses at learn.liquibase.com  ## 
+##                                                ##
+####################################################
+Starting Liquibase at 17:58:41 using Java 21.0.5 (version 4.30.0 #4943 built at 2024-10-31 17:00+0000)
+[2026-04-14 17:58:41] INFO [liquibase.ui] Liquibase Version: 4.30.0
+[2026-04-14 17:58:41] INFO [liquibase.ui] Liquibase Open Source 4.30.0 by Liquibase
+[2026-04-14 17:58:41] INFO [liquibase.integration] Starting command execution.
+[2026-04-14 17:58:41] WARNING [liquibase.command] Ignoring the global liquibase.driver value in favor of the command value.
+[2026-04-14 17:58:45] INFO [liquibase.command] Logging exception.
+[2026-04-14 17:58:45] INFO [liquibase.ui] ERROR: Exception Details
+[2026-04-14 17:58:45] INFO [liquibase.ui] ERROR: Exception Primary Class:  ChangeLogParseException
+[2026-04-14 17:58:45] INFO [liquibase.ui] ERROR: Exception Primary Reason:  The file changelog/db.changelog-master.xml was not found in the configured search path:
+    - C:\Repos\liquibase_mopdb
+    - C:\Program Files\liquibase\internal\lib\liquibase-core.jar
+    - C:\Program Files\liquibase\lib\mysql-connector-j-9.6.0.jar
+    - C:\Program Files\liquibase\lib
+    - C:\Program Files\liquibase\internal\lib\commons-collections4.jar
+    - C:\Program Files\liquibase\internal\lib\commons-io.jar
+    - C:\Program Files\liquibase\internal\lib\commons-lang3.jar
+    - C:\Program Files\liquibase\internal\lib\commons-text.jar
+    - C:\Program Files\liquibase\internal\lib\h2.jar
+    - C:\Program Files\liquibase\internal\lib\hsqldb.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-api.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-core.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-runtime.jar
+    - C:\Program Files\liquibase\internal\lib\jaybird.jar
+    - C:\Program Files\liquibase\internal\lib\jcc.jar
+    - C:\Program Files\liquibase\internal\lib\liquibase-commercial.jar
+    - C:\Program Files\liquibase\internal\lib\mariadb-java-client.jar
+    - C:\Program Files\liquibase\internal\lib\mssql-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib\ojdbc8.jar
+    - C:\Program Files\liquibase\internal\lib\opencsv.jar
+    - C:\Program Files\liquibase\internal\lib\picocli.jar
+    - C:\Program Files\liquibase\internal\lib\postgresql.jar
+    - C:\Program Files\liquibase\internal\lib\slf4j-api.jar
+    - C:\Program Files\liquibase\internal\lib\slf4j-simple.jar
+    - C:\Program Files\liquibase\internal\lib\snakeyaml.jar
+    - C:\Program Files\liquibase\internal\lib\snowflake-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib\sqlite-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib
+    - C:\Program Files\liquibase\internal\extensions\liquibase-commercial-bigquery.jar
+    - C:\Program Files\liquibase\internal\extensions
+More locations can be added with the 'searchPath' parameter.
+[2026-04-14 17:58:45] INFO [liquibase.ui] ERROR: Exception Primary Source:  4.30.0
+[2026-04-14 17:58:45] INFO [liquibase.command] Command execution complete
+[2026-04-14 17:58:46] SEVERE [liquibase.integration] The file changelog/db.changelog-master.xml was not found in the configured search path:
+    - C:\Repos\liquibase_mopdb
+    - C:\Program Files\liquibase\internal\lib\liquibase-core.jar
+    - C:\Program Files\liquibase\lib\mysql-connector-j-9.6.0.jar
+    - C:\Program Files\liquibase\lib
+    - C:\Program Files\liquibase\internal\lib\commons-collections4.jar
+    - C:\Program Files\liquibase\internal\lib\commons-io.jar
+    - C:\Program Files\liquibase\internal\lib\commons-lang3.jar
+    - C:\Program Files\liquibase\internal\lib\commons-text.jar
+    - C:\Program Files\liquibase\internal\lib\h2.jar
+    - C:\Program Files\liquibase\internal\lib\hsqldb.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-api.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-core.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-runtime.jar
+    - C:\Program Files\liquibase\internal\lib\jaybird.jar
+    - C:\Program Files\liquibase\internal\lib\jcc.jar
+    - C:\Program Files\liquibase\internal\lib\liquibase-commercial.jar
+    - C:\Program Files\liquibase\internal\lib\mariadb-java-client.jar
+    - C:\Program Files\liquibase\internal\lib\mssql-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib\ojdbc8.jar
+    - C:\Program Files\liquibase\internal\lib\opencsv.jar
+    - C:\Program Files\liquibase\internal\lib\picocli.jar
+    - C:\Program Files\liquibase\internal\lib\postgresql.jar
+    - C:\Program Files\liquibase\internal\lib\slf4j-api.jar
+    - C:\Program Files\liquibase\internal\lib\slf4j-simple.jar
+    - C:\Program Files\liquibase\internal\lib\snakeyaml.jar
+    - C:\Program Files\liquibase\internal\lib\snowflake-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib\sqlite-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib
+    - C:\Program Files\liquibase\internal\extensions\liquibase-commercial-bigquery.jar
+    - C:\Program Files\liquibase\internal\extensions
+More locations can be added with the 'searchPath' parameter.
+liquibase.exception.CommandExecutionException: liquibase.exception.ChangeLogParseException: The file changelog/db.changelog-master.xml was not found in the configured search path:
+    - C:\Repos\liquibase_mopdb
+    - C:\Program Files\liquibase\internal\lib\liquibase-core.jar
+    - C:\Program Files\liquibase\lib\mysql-connector-j-9.6.0.jar
+    - C:\Program Files\liquibase\lib
+    - C:\Program Files\liquibase\internal\lib\commons-collections4.jar
+    - C:\Program Files\liquibase\internal\lib\commons-io.jar
+    - C:\Program Files\liquibase\internal\lib\commons-lang3.jar
+    - C:\Program Files\liquibase\internal\lib\commons-text.jar
+    - C:\Program Files\liquibase\internal\lib\h2.jar
+    - C:\Program Files\liquibase\internal\lib\hsqldb.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-api.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-core.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-runtime.jar
+    - C:\Program Files\liquibase\internal\lib\jaybird.jar
+    - C:\Program Files\liquibase\internal\lib\jcc.jar
+    - C:\Program Files\liquibase\internal\lib\liquibase-commercial.jar
+    - C:\Program Files\liquibase\internal\lib\mariadb-java-client.jar
+    - C:\Program Files\liquibase\internal\lib\mssql-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib\ojdbc8.jar
+    - C:\Program Files\liquibase\internal\lib\opencsv.jar
+    - C:\Program Files\liquibase\internal\lib\picocli.jar
+    - C:\Program Files\liquibase\internal\lib\postgresql.jar
+    - C:\Program Files\liquibase\internal\lib\slf4j-api.jar
+    - C:\Program Files\liquibase\internal\lib\slf4j-simple.jar
+    - C:\Program Files\liquibase\internal\lib\snakeyaml.jar
+    - C:\Program Files\liquibase\internal\lib\snowflake-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib\sqlite-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib
+    - C:\Program Files\liquibase\internal\extensions\liquibase-commercial-bigquery.jar
+    - C:\Program Files\liquibase\internal\extensions
+More locations can be added with the 'searchPath' parameter.
+	at liquibase.command.CommandScope.lambda$execute$6(CommandScope.java:278)
+	at liquibase.Scope.child(Scope.java:203)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.command.CommandScope.execute(CommandScope.java:219)
+	at liquibase.integration.commandline.CommandRunner.call(CommandRunner.java:51)
+	at liquibase.integration.commandline.CommandRunner.call(CommandRunner.java:21)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2045)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2465)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2457)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2419)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2277)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2421)
+	at picocli.CommandLine.execute(CommandLine.java:2174)
+	at liquibase.integration.commandline.LiquibaseCommandLine.lambda$execute$2(LiquibaseCommandLine.java:391)
+	at liquibase.Scope.child(Scope.java:203)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.integration.commandline.LiquibaseCommandLine.lambda$execute$3(LiquibaseCommandLine.java:366)
+	at liquibase.Scope.child(Scope.java:203)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.integration.commandline.LiquibaseCommandLine.execute(LiquibaseCommandLine.java:363)
+	at liquibase.integration.commandline.LiquibaseCommandLine.main(LiquibaseCommandLine.java:98)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at liquibase.integration.commandline.LiquibaseLauncher.main(LiquibaseLauncher.java:116)
+Caused by: liquibase.exception.ChangeLogParseException: The file changelog/db.changelog-master.xml was not found in the configured search path:
+    - C:\Repos\liquibase_mopdb
+    - C:\Program Files\liquibase\internal\lib\liquibase-core.jar
+    - C:\Program Files\liquibase\lib\mysql-connector-j-9.6.0.jar
+    - C:\Program Files\liquibase\lib
+    - C:\Program Files\liquibase\internal\lib\commons-collections4.jar
+    - C:\Program Files\liquibase\internal\lib\commons-io.jar
+    - C:\Program Files\liquibase\internal\lib\commons-lang3.jar
+    - C:\Program Files\liquibase\internal\lib\commons-text.jar
+    - C:\Program Files\liquibase\internal\lib\h2.jar
+    - C:\Program Files\liquibase\internal\lib\hsqldb.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-api.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-core.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-runtime.jar
+    - C:\Program Files\liquibase\internal\lib\jaybird.jar
+    - C:\Program Files\liquibase\internal\lib\jcc.jar
+    - C:\Program Files\liquibase\internal\lib\liquibase-commercial.jar
+    - C:\Program Files\liquibase\internal\lib\mariadb-java-client.jar
+    - C:\Program Files\liquibase\internal\lib\mssql-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib\ojdbc8.jar
+    - C:\Program Files\liquibase\internal\lib\opencsv.jar
+    - C:\Program Files\liquibase\internal\lib\picocli.jar
+    - C:\Program Files\liquibase\internal\lib\postgresql.jar
+    - C:\Program Files\liquibase\internal\lib\slf4j-api.jar
+    - C:\Program Files\liquibase\internal\lib\slf4j-simple.jar
+    - C:\Program Files\liquibase\internal\lib\snakeyaml.jar
+    - C:\Program Files\liquibase\internal\lib\snowflake-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib\sqlite-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib
+    - C:\Program Files\liquibase\internal\extensions\liquibase-commercial-bigquery.jar
+    - C:\Program Files\liquibase\internal\extensions
+More locations can be added with the 'searchPath' parameter.
+	at liquibase.parser.core.xml.XMLChangeLogSAXParser.parseToNode(XMLChangeLogSAXParser.java:117)
+	at liquibase.parser.core.xml.AbstractChangeLogParser.parse(AbstractChangeLogParser.java:15)
+	at liquibase.command.core.helpers.DatabaseChangelogCommandStep.lambda$getDatabaseChangeLog$0(DatabaseChangelogCommandStep.java:129)
+	at liquibase.Scope.child(Scope.java:203)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.command.core.helpers.DatabaseChangelogCommandStep.getDatabaseChangeLog(DatabaseChangelogCommandStep.java:128)
+	at liquibase.command.core.helpers.DatabaseChangelogCommandStep.run(DatabaseChangelogCommandStep.java:87)
+	at liquibase.command.CommandScope.lambda$execute$6(CommandScope.java:231)
+	... 24 more
+
+[2026-04-14 17:58:46] INFO [liquibase.ui] Logs saved to liquibase.log
+[2026-04-14 17:58:55] INFO [liquibase.ui] ####################################################
+##   _     _             _ _                      ##
+##  | |   (_)           (_) |                     ##
+##  | |    _  __ _ _   _ _| |__   __ _ ___  ___   ##
+##  | |   | |/ _` | | | | | '_ \ / _` / __|/ _ \  ##
+##  | |___| | (_| | |_| | | |_) | (_| \__ \  __/  ##
+##  \_____/_|\__, |\__,_|_|_.__/ \__,_|___/\___|  ##
+##              | |                               ##
+##              |_|                               ##
+##                                                ## 
+##  Get documentation at docs.liquibase.com       ##
+##  Get certified courses at learn.liquibase.com  ## 
+##                                                ##
+####################################################
+Starting Liquibase at 17:58:55 using Java 21.0.5 (version 4.30.0 #4943 built at 2024-10-31 17:00+0000)
+[2026-04-14 17:58:55] INFO [liquibase.ui] Liquibase Version: 4.30.0
+[2026-04-14 17:58:55] INFO [liquibase.ui] Liquibase Open Source 4.30.0 by Liquibase
+[2026-04-14 17:58:55] INFO [liquibase.integration] Starting command execution.
+[2026-04-14 17:58:55] WARNING [liquibase.command] Ignoring the global liquibase.driver value in favor of the command value.
+[2026-04-14 17:58:58] INFO [liquibase.command] Logging exception.
+[2026-04-14 17:58:58] INFO [liquibase.ui] ERROR: Exception Details
+[2026-04-14 17:58:58] INFO [liquibase.ui] ERROR: Exception Primary Class:  ChangeLogParseException
+[2026-04-14 17:58:58] INFO [liquibase.ui] ERROR: Exception Primary Reason:  The file changelog/db.changelog-master.xml was not found in the configured search path:
+    - C:\Repos\liquibase_mopdb
+    - C:\Program Files\liquibase\internal\lib\liquibase-core.jar
+    - C:\Program Files\liquibase\lib\mysql-connector-j-9.6.0.jar
+    - C:\Program Files\liquibase\lib
+    - C:\Program Files\liquibase\internal\lib\commons-collections4.jar
+    - C:\Program Files\liquibase\internal\lib\commons-io.jar
+    - C:\Program Files\liquibase\internal\lib\commons-lang3.jar
+    - C:\Program Files\liquibase\internal\lib\commons-text.jar
+    - C:\Program Files\liquibase\internal\lib\h2.jar
+    - C:\Program Files\liquibase\internal\lib\hsqldb.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-api.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-core.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-runtime.jar
+    - C:\Program Files\liquibase\internal\lib\jaybird.jar
+    - C:\Program Files\liquibase\internal\lib\jcc.jar
+    - C:\Program Files\liquibase\internal\lib\liquibase-commercial.jar
+    - C:\Program Files\liquibase\internal\lib\mariadb-java-client.jar
+    - C:\Program Files\liquibase\internal\lib\mssql-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib\ojdbc8.jar
+    - C:\Program Files\liquibase\internal\lib\opencsv.jar
+    - C:\Program Files\liquibase\internal\lib\picocli.jar
+    - C:\Program Files\liquibase\internal\lib\postgresql.jar
+    - C:\Program Files\liquibase\internal\lib\slf4j-api.jar
+    - C:\Program Files\liquibase\internal\lib\slf4j-simple.jar
+    - C:\Program Files\liquibase\internal\lib\snakeyaml.jar
+    - C:\Program Files\liquibase\internal\lib\snowflake-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib\sqlite-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib
+    - C:\Program Files\liquibase\internal\extensions\liquibase-commercial-bigquery.jar
+    - C:\Program Files\liquibase\internal\extensions
+More locations can be added with the 'searchPath' parameter.
+[2026-04-14 17:58:58] INFO [liquibase.ui] ERROR: Exception Primary Source:  4.30.0
+[2026-04-14 17:58:58] INFO [liquibase.command] Command execution complete
+[2026-04-14 17:58:59] SEVERE [liquibase.integration] The file changelog/db.changelog-master.xml was not found in the configured search path:
+    - C:\Repos\liquibase_mopdb
+    - C:\Program Files\liquibase\internal\lib\liquibase-core.jar
+    - C:\Program Files\liquibase\lib\mysql-connector-j-9.6.0.jar
+    - C:\Program Files\liquibase\lib
+    - C:\Program Files\liquibase\internal\lib\commons-collections4.jar
+    - C:\Program Files\liquibase\internal\lib\commons-io.jar
+    - C:\Program Files\liquibase\internal\lib\commons-lang3.jar
+    - C:\Program Files\liquibase\internal\lib\commons-text.jar
+    - C:\Program Files\liquibase\internal\lib\h2.jar
+    - C:\Program Files\liquibase\internal\lib\hsqldb.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-api.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-core.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-runtime.jar
+    - C:\Program Files\liquibase\internal\lib\jaybird.jar
+    - C:\Program Files\liquibase\internal\lib\jcc.jar
+    - C:\Program Files\liquibase\internal\lib\liquibase-commercial.jar
+    - C:\Program Files\liquibase\internal\lib\mariadb-java-client.jar
+    - C:\Program Files\liquibase\internal\lib\mssql-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib\ojdbc8.jar
+    - C:\Program Files\liquibase\internal\lib\opencsv.jar
+    - C:\Program Files\liquibase\internal\lib\picocli.jar
+    - C:\Program Files\liquibase\internal\lib\postgresql.jar
+    - C:\Program Files\liquibase\internal\lib\slf4j-api.jar
+    - C:\Program Files\liquibase\internal\lib\slf4j-simple.jar
+    - C:\Program Files\liquibase\internal\lib\snakeyaml.jar
+    - C:\Program Files\liquibase\internal\lib\snowflake-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib\sqlite-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib
+    - C:\Program Files\liquibase\internal\extensions\liquibase-commercial-bigquery.jar
+    - C:\Program Files\liquibase\internal\extensions
+More locations can be added with the 'searchPath' parameter.
+liquibase.exception.CommandExecutionException: liquibase.exception.ChangeLogParseException: The file changelog/db.changelog-master.xml was not found in the configured search path:
+    - C:\Repos\liquibase_mopdb
+    - C:\Program Files\liquibase\internal\lib\liquibase-core.jar
+    - C:\Program Files\liquibase\lib\mysql-connector-j-9.6.0.jar
+    - C:\Program Files\liquibase\lib
+    - C:\Program Files\liquibase\internal\lib\commons-collections4.jar
+    - C:\Program Files\liquibase\internal\lib\commons-io.jar
+    - C:\Program Files\liquibase\internal\lib\commons-lang3.jar
+    - C:\Program Files\liquibase\internal\lib\commons-text.jar
+    - C:\Program Files\liquibase\internal\lib\h2.jar
+    - C:\Program Files\liquibase\internal\lib\hsqldb.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-api.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-core.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-runtime.jar
+    - C:\Program Files\liquibase\internal\lib\jaybird.jar
+    - C:\Program Files\liquibase\internal\lib\jcc.jar
+    - C:\Program Files\liquibase\internal\lib\liquibase-commercial.jar
+    - C:\Program Files\liquibase\internal\lib\mariadb-java-client.jar
+    - C:\Program Files\liquibase\internal\lib\mssql-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib\ojdbc8.jar
+    - C:\Program Files\liquibase\internal\lib\opencsv.jar
+    - C:\Program Files\liquibase\internal\lib\picocli.jar
+    - C:\Program Files\liquibase\internal\lib\postgresql.jar
+    - C:\Program Files\liquibase\internal\lib\slf4j-api.jar
+    - C:\Program Files\liquibase\internal\lib\slf4j-simple.jar
+    - C:\Program Files\liquibase\internal\lib\snakeyaml.jar
+    - C:\Program Files\liquibase\internal\lib\snowflake-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib\sqlite-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib
+    - C:\Program Files\liquibase\internal\extensions\liquibase-commercial-bigquery.jar
+    - C:\Program Files\liquibase\internal\extensions
+More locations can be added with the 'searchPath' parameter.
+	at liquibase.command.CommandScope.lambda$execute$6(CommandScope.java:278)
+	at liquibase.Scope.child(Scope.java:203)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.command.CommandScope.execute(CommandScope.java:219)
+	at liquibase.integration.commandline.CommandRunner.call(CommandRunner.java:51)
+	at liquibase.integration.commandline.CommandRunner.call(CommandRunner.java:21)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2045)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2465)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2457)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2419)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2277)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2421)
+	at picocli.CommandLine.execute(CommandLine.java:2174)
+	at liquibase.integration.commandline.LiquibaseCommandLine.lambda$execute$2(LiquibaseCommandLine.java:391)
+	at liquibase.Scope.child(Scope.java:203)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.integration.commandline.LiquibaseCommandLine.lambda$execute$3(LiquibaseCommandLine.java:366)
+	at liquibase.Scope.child(Scope.java:203)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.integration.commandline.LiquibaseCommandLine.execute(LiquibaseCommandLine.java:363)
+	at liquibase.integration.commandline.LiquibaseCommandLine.main(LiquibaseCommandLine.java:98)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at liquibase.integration.commandline.LiquibaseLauncher.main(LiquibaseLauncher.java:116)
+Caused by: liquibase.exception.ChangeLogParseException: The file changelog/db.changelog-master.xml was not found in the configured search path:
+    - C:\Repos\liquibase_mopdb
+    - C:\Program Files\liquibase\internal\lib\liquibase-core.jar
+    - C:\Program Files\liquibase\lib\mysql-connector-j-9.6.0.jar
+    - C:\Program Files\liquibase\lib
+    - C:\Program Files\liquibase\internal\lib\commons-collections4.jar
+    - C:\Program Files\liquibase\internal\lib\commons-io.jar
+    - C:\Program Files\liquibase\internal\lib\commons-lang3.jar
+    - C:\Program Files\liquibase\internal\lib\commons-text.jar
+    - C:\Program Files\liquibase\internal\lib\h2.jar
+    - C:\Program Files\liquibase\internal\lib\hsqldb.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-api.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-core.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-runtime.jar
+    - C:\Program Files\liquibase\internal\lib\jaybird.jar
+    - C:\Program Files\liquibase\internal\lib\jcc.jar
+    - C:\Program Files\liquibase\internal\lib\liquibase-commercial.jar
+    - C:\Program Files\liquibase\internal\lib\mariadb-java-client.jar
+    - C:\Program Files\liquibase\internal\lib\mssql-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib\ojdbc8.jar
+    - C:\Program Files\liquibase\internal\lib\opencsv.jar
+    - C:\Program Files\liquibase\internal\lib\picocli.jar
+    - C:\Program Files\liquibase\internal\lib\postgresql.jar
+    - C:\Program Files\liquibase\internal\lib\slf4j-api.jar
+    - C:\Program Files\liquibase\internal\lib\slf4j-simple.jar
+    - C:\Program Files\liquibase\internal\lib\snakeyaml.jar
+    - C:\Program Files\liquibase\internal\lib\snowflake-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib\sqlite-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib
+    - C:\Program Files\liquibase\internal\extensions\liquibase-commercial-bigquery.jar
+    - C:\Program Files\liquibase\internal\extensions
+More locations can be added with the 'searchPath' parameter.
+	at liquibase.parser.core.xml.XMLChangeLogSAXParser.parseToNode(XMLChangeLogSAXParser.java:117)
+	at liquibase.parser.core.xml.AbstractChangeLogParser.parse(AbstractChangeLogParser.java:15)
+	at liquibase.command.core.helpers.DatabaseChangelogCommandStep.lambda$getDatabaseChangeLog$0(DatabaseChangelogCommandStep.java:129)
+	at liquibase.Scope.child(Scope.java:203)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.command.core.helpers.DatabaseChangelogCommandStep.getDatabaseChangeLog(DatabaseChangelogCommandStep.java:128)
+	at liquibase.command.core.helpers.DatabaseChangelogCommandStep.run(DatabaseChangelogCommandStep.java:87)
+	at liquibase.command.CommandScope.lambda$execute$6(CommandScope.java:231)
+	... 24 more
+
+[2026-04-14 17:58:59] INFO [liquibase.ui] Logs saved to liquibase.log
+[2026-04-14 18:00:50] INFO [liquibase.ui] ####################################################
+##   _     _             _ _                      ##
+##  | |   (_)           (_) |                     ##
+##  | |    _  __ _ _   _ _| |__   __ _ ___  ___   ##
+##  | |   | |/ _` | | | | | '_ \ / _` / __|/ _ \  ##
+##  | |___| | (_| | |_| | | |_) | (_| \__ \  __/  ##
+##  \_____/_|\__, |\__,_|_|_.__/ \__,_|___/\___|  ##
+##              | |                               ##
+##              |_|                               ##
+##                                                ## 
+##  Get documentation at docs.liquibase.com       ##
+##  Get certified courses at learn.liquibase.com  ## 
+##                                                ##
+####################################################
+Starting Liquibase at 18:00:50 using Java 21.0.5 (version 4.30.0 #4943 built at 2024-10-31 17:00+0000)
+[2026-04-14 18:00:50] INFO [liquibase.ui] Liquibase Version: 4.30.0
+[2026-04-14 18:00:50] INFO [liquibase.ui] Liquibase Open Source 4.30.0 by Liquibase
+[2026-04-14 18:00:50] INFO [liquibase.integration] Starting command execution.
+[2026-04-14 18:00:50] WARNING [liquibase.command] Ignoring the global liquibase.driver value in favor of the command value.
+[2026-04-14 18:00:56] INFO [liquibase.changelog] Reading from mop.DATABASECHANGELOG
+[2026-04-14 18:00:56] INFO [liquibase.command] Command execution complete
+[2026-04-14 18:00:58] INFO [liquibase.ui] Logs saved to liquibase.log
+[2026-04-14 18:00:58] INFO [liquibase.ui] Liquibase command 'status' was executed successfully.
+[2026-04-14 18:04:25] INFO [liquibase.ui] ####################################################
+##   _     _             _ _                      ##
+##  | |   (_)           (_) |                     ##
+##  | |    _  __ _ _   _ _| |__   __ _ ___  ___   ##
+##  | |   | |/ _` | | | | | '_ \ / _` / __|/ _ \  ##
+##  | |___| | (_| | |_| | | |_) | (_| \__ \  __/  ##
+##  \_____/_|\__, |\__,_|_|_.__/ \__,_|___/\___|  ##
+##              | |                               ##
+##              |_|                               ##
+##                                                ## 
+##  Get documentation at docs.liquibase.com       ##
+##  Get certified courses at learn.liquibase.com  ## 
+##                                                ##
+####################################################
+Starting Liquibase at 18:04:25 using Java 21.0.5 (version 4.30.0 #4943 built at 2024-10-31 17:00+0000)
+[2026-04-14 18:04:25] INFO [liquibase.ui] Liquibase Version: 4.30.0
+[2026-04-14 18:04:25] INFO [liquibase.ui] Liquibase Open Source 4.30.0 by Liquibase
+[2026-04-14 18:04:25] INFO [liquibase.integration] Starting command execution.
+[2026-04-14 18:04:25] WARNING [liquibase.command] Ignoring the global liquibase.driver value in favor of the command value.
+[2026-04-14 18:04:31] INFO [liquibase.changelog] Reading from mop.DATABASECHANGELOG
+[2026-04-14 18:04:31] INFO [liquibase.command] Command execution complete
+[2026-04-14 18:04:33] INFO [liquibase.ui] Logs saved to liquibase.log
+[2026-04-14 18:04:33] INFO [liquibase.ui] Liquibase command 'status' was executed successfully.
+[2026-04-14 18:04:54] INFO [liquibase.ui] ####################################################
+##   _     _             _ _                      ##
+##  | |   (_)           (_) |                     ##
+##  | |    _  __ _ _   _ _| |__   __ _ ___  ___   ##
+##  | |   | |/ _` | | | | | '_ \ / _` / __|/ _ \  ##
+##  | |___| | (_| | |_| | | |_) | (_| \__ \  __/  ##
+##  \_____/_|\__, |\__,_|_|_.__/ \__,_|___/\___|  ##
+##              | |                               ##
+##              |_|                               ##
+##                                                ## 
+##  Get documentation at docs.liquibase.com       ##
+##  Get certified courses at learn.liquibase.com  ## 
+##                                                ##
+####################################################
+Starting Liquibase at 18:04:54 using Java 21.0.5 (version 4.30.0 #4943 built at 2024-10-31 17:00+0000)
+[2026-04-14 18:04:54] INFO [liquibase.ui] Liquibase Version: 4.30.0
+[2026-04-14 18:04:54] INFO [liquibase.ui] Liquibase Open Source 4.30.0 by Liquibase
+[2026-04-14 18:04:54] INFO [liquibase.integration] Starting command execution.
+[2026-04-14 18:04:54] WARNING [liquibase.command] Ignoring the global liquibase.driver value in favor of the command value.
+[2026-04-14 18:05:00] INFO [liquibase.changelog] Reading from mop.DATABASECHANGELOG
+[2026-04-14 18:05:01] INFO [liquibase.lockservice] Successfully acquired change log lock
+[2026-04-14 18:05:02] INFO [liquibase.command] Using deploymentId: 6204302050
+[2026-04-14 18:05:02] INFO [liquibase.changelog] Reading from mop.DATABASECHANGELOG
+[2026-04-14 18:05:02] INFO [liquibase.ui] Running Changeset: changelog/changelog.sql::001::dev_team
+[2026-04-14 18:05:02] INFO [liquibase.changelog] Custom SQL executed
+[2026-04-14 18:05:02] INFO [liquibase.changelog] ChangeSet changelog/changelog.sql::001::dev_team ran successfully in 428ms
+[2026-04-14 18:05:03] INFO [liquibase.util] UPDATE SUMMARY
+[2026-04-14 18:05:03] INFO [liquibase.util] Run:                          1
+[2026-04-14 18:05:03] INFO [liquibase.util] Previously run:               0
+[2026-04-14 18:05:03] INFO [liquibase.util] Filtered out:                 0
+[2026-04-14 18:05:03] INFO [liquibase.util] -------------------------------
+[2026-04-14 18:05:03] INFO [liquibase.util] Total change sets:            1
+[2026-04-14 18:05:03] INFO [liquibase.util] Update summary generated
+[2026-04-14 18:05:03] INFO [liquibase.command] Update command completed successfully.
+[2026-04-14 18:05:03] INFO [liquibase.ui] Liquibase: Update has been successful. Rows affected: 1
+[2026-04-14 18:05:03] INFO [liquibase.lockservice] Successfully released change log lock
+[2026-04-14 18:05:04] INFO [liquibase.command] Command execution complete
+[2026-04-14 18:05:05] INFO [liquibase.ui] Logs saved to liquibase.log
+[2026-04-14 18:05:05] INFO [liquibase.ui] Liquibase command 'update' was executed successfully.
+[2026-04-14 18:05:09] INFO [liquibase.ui] ####################################################
+##   _     _             _ _                      ##
+##  | |   (_)           (_) |                     ##
+##  | |    _  __ _ _   _ _| |__   __ _ ___  ___   ##
+##  | |   | |/ _` | | | | | '_ \ / _` / __|/ _ \  ##
+##  | |___| | (_| | |_| | | |_) | (_| \__ \  __/  ##
+##  \_____/_|\__, |\__,_|_|_.__/ \__,_|___/\___|  ##
+##              | |                               ##
+##              |_|                               ##
+##                                                ## 
+##  Get documentation at docs.liquibase.com       ##
+##  Get certified courses at learn.liquibase.com  ## 
+##                                                ##
+####################################################
+Starting Liquibase at 18:05:09 using Java 21.0.5 (version 4.30.0 #4943 built at 2024-10-31 17:00+0000)
+[2026-04-14 18:05:09] INFO [liquibase.ui] Liquibase Version: 4.30.0
+[2026-04-14 18:05:09] INFO [liquibase.ui] Liquibase Open Source 4.30.0 by Liquibase
+[2026-04-14 18:05:09] INFO [liquibase.integration] Starting command execution.
+[2026-04-14 18:05:09] WARNING [liquibase.command] Ignoring the global liquibase.driver value in favor of the command value.
+[2026-04-14 18:05:15] INFO [liquibase.changelog] Reading from mop.DATABASECHANGELOG
+[2026-04-14 18:05:15] INFO [liquibase.command] Command execution complete
+[2026-04-14 18:05:16] INFO [liquibase.ui] Logs saved to liquibase.log
+[2026-04-14 18:05:16] INFO [liquibase.ui] Liquibase command 'status' was executed successfully.
+[2026-04-14 18:09:56] INFO [liquibase.ui] ####################################################
+##   _     _             _ _                      ##
+##  | |   (_)           (_) |                     ##
+##  | |    _  __ _ _   _ _| |__   __ _ ___  ___   ##
+##  | |   | |/ _` | | | | | '_ \ / _` / __|/ _ \  ##
+##  | |___| | (_| | |_| | | |_) | (_| \__ \  __/  ##
+##  \_____/_|\__, |\__,_|_|_.__/ \__,_|___/\___|  ##
+##              | |                               ##
+##              |_|                               ##
+##                                                ## 
+##  Get documentation at docs.liquibase.com       ##
+##  Get certified courses at learn.liquibase.com  ## 
+##                                                ##
+####################################################
+Starting Liquibase at 18:09:56 using Java 21.0.5 (version 4.30.0 #4943 built at 2024-10-31 17:00+0000)
+[2026-04-14 18:09:56] INFO [liquibase.ui] Liquibase Version: 4.30.0
+[2026-04-14 18:09:56] INFO [liquibase.ui] Liquibase Open Source 4.30.0 by Liquibase
+[2026-04-14 18:09:56] INFO [liquibase.integration] Starting command execution.
+[2026-04-14 18:09:56] INFO [liquibase.ui] WARNING: 
+
+Liquibase detected the following invalid LIQUIBASE_* environment variables:
+
+- LIQUIBASE_PASSWORD
+- LIQUIBASE_URL
+- LIQUIBASE_USERNAME
+
+Find the list of valid environment variables at https://docs.liquibase.com/environment-variables
+
+[2026-04-14 18:09:56] WARNING [liquibase.configuration] 
+
+Liquibase detected the following invalid LIQUIBASE_* environment variables:
+
+- LIQUIBASE_PASSWORD
+- LIQUIBASE_URL
+- LIQUIBASE_USERNAME
+
+Find the list of valid environment variables at https://docs.liquibase.com/environment-variables
+
+[2026-04-14 18:09:56] WARNING [liquibase.command] Ignoring the global liquibase.driver value in favor of the command value.
+[2026-04-14 18:09:57] INFO [liquibase.command] Logging exception.
+[2026-04-14 18:09:57] INFO [liquibase.ui] ERROR: Exception Details
+[2026-04-14 18:09:57] INFO [liquibase.ui] ERROR: Exception Primary Class:  DatabaseException
+[2026-04-14 18:09:57] INFO [liquibase.ui] ERROR: Exception Primary Reason:  Connection could not be created to ${LIQUIBASE_URL} with driver com.mysql.cj.jdbc.Driver.  Possibly the wrong driver for the given database URL
+[2026-04-14 18:09:57] INFO [liquibase.ui] ERROR: Exception Primary Source:  4.30.0
+[2026-04-14 18:09:57] INFO [liquibase.command] Command execution complete
+[2026-04-14 18:09:58] SEVERE [liquibase.integration] Connection could not be created to ${LIQUIBASE_URL} with driver com.mysql.cj.jdbc.Driver.  Possibly the wrong driver for the given database URL
+liquibase.exception.CommandExecutionException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: Connection could not be created to ${LIQUIBASE_URL} with driver com.mysql.cj.jdbc.Driver.  Possibly the wrong driver for the given database URL
+	at liquibase.command.CommandScope.lambda$execute$6(CommandScope.java:278)
+	at liquibase.Scope.child(Scope.java:203)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.command.CommandScope.execute(CommandScope.java:219)
+	at liquibase.integration.commandline.CommandRunner.call(CommandRunner.java:51)
+	at liquibase.integration.commandline.CommandRunner.call(CommandRunner.java:21)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2045)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2465)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2457)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2419)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2277)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2421)
+	at picocli.CommandLine.execute(CommandLine.java:2174)
+	at liquibase.integration.commandline.LiquibaseCommandLine.lambda$execute$2(LiquibaseCommandLine.java:391)
+	at liquibase.Scope.child(Scope.java:203)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.integration.commandline.LiquibaseCommandLine.lambda$execute$3(LiquibaseCommandLine.java:366)
+	at liquibase.Scope.child(Scope.java:203)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.integration.commandline.LiquibaseCommandLine.execute(LiquibaseCommandLine.java:363)
+	at liquibase.integration.commandline.LiquibaseCommandLine.main(LiquibaseCommandLine.java:98)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at liquibase.integration.commandline.LiquibaseLauncher.main(LiquibaseLauncher.java:116)
+Caused by: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: Connection could not be created to ${LIQUIBASE_URL} with driver com.mysql.cj.jdbc.Driver.  Possibly the wrong driver for the given database URL
+	at liquibase.command.core.helpers.AbstractDatabaseConnectionCommandStep.createDatabaseObject(AbstractDatabaseConnectionCommandStep.java:106)
+	at liquibase.command.core.helpers.DbUrlConnectionCommandStep.obtainDatabase(DbUrlConnectionCommandStep.java:106)
+	at liquibase.command.core.helpers.DbUrlConnectionCommandStep.run(DbUrlConnectionCommandStep.java:83)
+	at liquibase.command.CommandScope.lambda$execute$6(CommandScope.java:231)
+	... 24 more
+Caused by: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: Connection could not be created to ${LIQUIBASE_URL} with driver com.mysql.cj.jdbc.Driver.  Possibly the wrong driver for the given database URL
+	at liquibase.database.DatabaseFactory.openConnection(DatabaseFactory.java:241)
+	at liquibase.database.DatabaseFactory.openConnection(DatabaseFactory.java:188)
+	at liquibase.database.DatabaseFactory.openDatabase(DatabaseFactory.java:153)
+	at liquibase.command.core.helpers.AbstractDatabaseConnectionCommandStep.createDatabaseObject(AbstractDatabaseConnectionCommandStep.java:74)
+	... 27 more
+Caused by: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: Connection could not be created to ${LIQUIBASE_URL} with driver com.mysql.cj.jdbc.Driver.  Possibly the wrong driver for the given database URL
+	at liquibase.database.ConnectionServiceFactory.create(ConnectionServiceFactory.java:35)
+	at liquibase.database.DatabaseFactory.openConnection(DatabaseFactory.java:238)
+	... 30 more
+Caused by: liquibase.exception.DatabaseException: Connection could not be created to ${LIQUIBASE_URL} with driver com.mysql.cj.jdbc.Driver.  Possibly the wrong driver for the given database URL
+	at liquibase.database.jvm.JdbcConnection.open(JdbcConnection.java:44)
+	at com.datical.liquibase.ext.database.jvm.ProJdbcConnection.open(ProJdbcConnection.java:33)
+	at liquibase.database.ConnectionServiceFactory.create(ConnectionServiceFactory.java:32)
+	... 31 more
+
+[2026-04-14 18:09:58] INFO [liquibase.ui] Logs saved to liquibase.log
+[2026-04-14 18:11:34] INFO [liquibase.ui] ####################################################
+##   _     _             _ _                      ##
+##  | |   (_)           (_) |                     ##
+##  | |    _  __ _ _   _ _| |__   __ _ ___  ___   ##
+##  | |   | |/ _` | | | | | '_ \ / _` / __|/ _ \  ##
+##  | |___| | (_| | |_| | | |_) | (_| \__ \  __/  ##
+##  \_____/_|\__, |\__,_|_|_.__/ \__,_|___/\___|  ##
+##              | |                               ##
+##              |_|                               ##
+##                                                ## 
+##  Get documentation at docs.liquibase.com       ##
+##  Get certified courses at learn.liquibase.com  ## 
+##                                                ##
+####################################################
+Starting Liquibase at 18:11:34 using Java 21.0.5 (version 4.30.0 #4943 built at 2024-10-31 17:00+0000)
+[2026-04-14 18:11:34] INFO [liquibase.ui] Liquibase Version: 4.30.0
+[2026-04-14 18:11:34] INFO [liquibase.ui] Liquibase Open Source 4.30.0 by Liquibase
+[2026-04-14 18:11:34] INFO [liquibase.integration] Starting command execution.
+[2026-04-14 18:11:34] INFO [liquibase.ui] WARNING: 
+
+Liquibase detected the following invalid LIQUIBASE_* environment variables:
+
+- LIQUIBASE_PASSWORD
+- LIQUIBASE_URL
+- LIQUIBASE_USERNAME
+
+Find the list of valid environment variables at https://docs.liquibase.com/environment-variables
+
+[2026-04-14 18:11:34] WARNING [liquibase.configuration] 
+
+Liquibase detected the following invalid LIQUIBASE_* environment variables:
+
+- LIQUIBASE_PASSWORD
+- LIQUIBASE_URL
+- LIQUIBASE_USERNAME
+
+Find the list of valid environment variables at https://docs.liquibase.com/environment-variables
+
+[2026-04-14 18:11:34] WARNING [liquibase.command] Ignoring the global liquibase.driver value in favor of the command value.
+[2026-04-14 18:11:35] INFO [liquibase.command] Logging exception.
+[2026-04-14 18:11:35] INFO [liquibase.ui] ERROR: Exception Details
+[2026-04-14 18:11:35] INFO [liquibase.ui] ERROR: Exception Primary Class:  DatabaseException
+[2026-04-14 18:11:35] INFO [liquibase.ui] ERROR: Exception Primary Reason:  Connection could not be created to ${LIQUIBASE_URL} with driver com.mysql.cj.jdbc.Driver.  Possibly the wrong driver for the given database URL
+[2026-04-14 18:11:35] INFO [liquibase.ui] ERROR: Exception Primary Source:  4.30.0
+[2026-04-14 18:11:35] INFO [liquibase.command] Command execution complete
+[2026-04-14 18:11:36] SEVERE [liquibase.integration] Connection could not be created to ${LIQUIBASE_URL} with driver com.mysql.cj.jdbc.Driver.  Possibly the wrong driver for the given database URL
+liquibase.exception.CommandExecutionException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: Connection could not be created to ${LIQUIBASE_URL} with driver com.mysql.cj.jdbc.Driver.  Possibly the wrong driver for the given database URL
+	at liquibase.command.CommandScope.lambda$execute$6(CommandScope.java:278)
+	at liquibase.Scope.child(Scope.java:203)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.command.CommandScope.execute(CommandScope.java:219)
+	at liquibase.integration.commandline.CommandRunner.call(CommandRunner.java:51)
+	at liquibase.integration.commandline.CommandRunner.call(CommandRunner.java:21)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2045)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2465)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2457)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2419)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2277)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2421)
+	at picocli.CommandLine.execute(CommandLine.java:2174)
+	at liquibase.integration.commandline.LiquibaseCommandLine.lambda$execute$2(LiquibaseCommandLine.java:391)
+	at liquibase.Scope.child(Scope.java:203)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.integration.commandline.LiquibaseCommandLine.lambda$execute$3(LiquibaseCommandLine.java:366)
+	at liquibase.Scope.child(Scope.java:203)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.integration.commandline.LiquibaseCommandLine.execute(LiquibaseCommandLine.java:363)
+	at liquibase.integration.commandline.LiquibaseCommandLine.main(LiquibaseCommandLine.java:98)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at liquibase.integration.commandline.LiquibaseLauncher.main(LiquibaseLauncher.java:116)
+Caused by: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: Connection could not be created to ${LIQUIBASE_URL} with driver com.mysql.cj.jdbc.Driver.  Possibly the wrong driver for the given database URL
+	at liquibase.command.core.helpers.AbstractDatabaseConnectionCommandStep.createDatabaseObject(AbstractDatabaseConnectionCommandStep.java:106)
+	at liquibase.command.core.helpers.DbUrlConnectionCommandStep.obtainDatabase(DbUrlConnectionCommandStep.java:106)
+	at liquibase.command.core.helpers.DbUrlConnectionCommandStep.run(DbUrlConnectionCommandStep.java:83)
+	at liquibase.command.CommandScope.lambda$execute$6(CommandScope.java:231)
+	... 24 more
+Caused by: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: Connection could not be created to ${LIQUIBASE_URL} with driver com.mysql.cj.jdbc.Driver.  Possibly the wrong driver for the given database URL
+	at liquibase.database.DatabaseFactory.openConnection(DatabaseFactory.java:241)
+	at liquibase.database.DatabaseFactory.openConnection(DatabaseFactory.java:188)
+	at liquibase.database.DatabaseFactory.openDatabase(DatabaseFactory.java:153)
+	at liquibase.command.core.helpers.AbstractDatabaseConnectionCommandStep.createDatabaseObject(AbstractDatabaseConnectionCommandStep.java:74)
+	... 27 more
+Caused by: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: Connection could not be created to ${LIQUIBASE_URL} with driver com.mysql.cj.jdbc.Driver.  Possibly the wrong driver for the given database URL
+	at liquibase.database.ConnectionServiceFactory.create(ConnectionServiceFactory.java:35)
+	at liquibase.database.DatabaseFactory.openConnection(DatabaseFactory.java:238)
+	... 30 more
+Caused by: liquibase.exception.DatabaseException: Connection could not be created to ${LIQUIBASE_URL} with driver com.mysql.cj.jdbc.Driver.  Possibly the wrong driver for the given database URL
+	at liquibase.database.jvm.JdbcConnection.open(JdbcConnection.java:44)
+	at com.datical.liquibase.ext.database.jvm.ProJdbcConnection.open(ProJdbcConnection.java:33)
+	at liquibase.database.ConnectionServiceFactory.create(ConnectionServiceFactory.java:32)
+	... 31 more
+
+[2026-04-14 18:11:36] INFO [liquibase.ui] Logs saved to liquibase.log
+[2026-04-14 18:11:45] INFO [liquibase.ui] ####################################################
+##   _     _             _ _                      ##
+##  | |   (_)           (_) |                     ##
+##  | |    _  __ _ _   _ _| |__   __ _ ___  ___   ##
+##  | |   | |/ _` | | | | | '_ \ / _` / __|/ _ \  ##
+##  | |___| | (_| | |_| | | |_) | (_| \__ \  __/  ##
+##  \_____/_|\__, |\__,_|_|_.__/ \__,_|___/\___|  ##
+##              | |                               ##
+##              |_|                               ##
+##                                                ## 
+##  Get documentation at docs.liquibase.com       ##
+##  Get certified courses at learn.liquibase.com  ## 
+##                                                ##
+####################################################
+Starting Liquibase at 18:11:45 using Java 21.0.5 (version 4.30.0 #4943 built at 2024-10-31 17:00+0000)
+[2026-04-14 18:11:45] INFO [liquibase.ui] Liquibase Version: 4.30.0
+[2026-04-14 18:11:45] INFO [liquibase.ui] Liquibase Open Source 4.30.0 by Liquibase
+[2026-04-14 18:11:45] INFO [liquibase.integration] Starting command execution.
+[2026-04-14 18:11:45] INFO [liquibase.ui] WARNING: 
+
+Liquibase detected the following invalid LIQUIBASE_* environment variables:
+
+- LIQUIBASE_PASSWORD
+- LIQUIBASE_URL
+- LIQUIBASE_USERNAME
+
+Find the list of valid environment variables at https://docs.liquibase.com/environment-variables
+
+[2026-04-14 18:11:45] WARNING [liquibase.configuration] 
+
+Liquibase detected the following invalid LIQUIBASE_* environment variables:
+
+- LIQUIBASE_PASSWORD
+- LIQUIBASE_URL
+- LIQUIBASE_USERNAME
+
+Find the list of valid environment variables at https://docs.liquibase.com/environment-variables
+
+[2026-04-14 18:11:45] WARNING [liquibase.command] Ignoring the global liquibase.driver value in favor of the command value.
+[2026-04-14 18:11:46] INFO [liquibase.command] Logging exception.
+[2026-04-14 18:11:46] INFO [liquibase.ui] ERROR: Exception Details
+[2026-04-14 18:11:46] INFO [liquibase.ui] ERROR: Exception Primary Class:  DatabaseException
+[2026-04-14 18:11:46] INFO [liquibase.ui] ERROR: Exception Primary Reason:  Connection could not be created to ${LIQUIBASE_URL} with driver com.mysql.cj.jdbc.Driver.  Possibly the wrong driver for the given database URL
+[2026-04-14 18:11:46] INFO [liquibase.ui] ERROR: Exception Primary Source:  4.30.0
+[2026-04-14 18:11:46] INFO [liquibase.command] Command execution complete
+[2026-04-14 18:11:47] SEVERE [liquibase.integration] Connection could not be created to ${LIQUIBASE_URL} with driver com.mysql.cj.jdbc.Driver.  Possibly the wrong driver for the given database URL
+liquibase.exception.CommandExecutionException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: Connection could not be created to ${LIQUIBASE_URL} with driver com.mysql.cj.jdbc.Driver.  Possibly the wrong driver for the given database URL
+	at liquibase.command.CommandScope.lambda$execute$6(CommandScope.java:278)
+	at liquibase.Scope.child(Scope.java:203)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.command.CommandScope.execute(CommandScope.java:219)
+	at liquibase.integration.commandline.CommandRunner.call(CommandRunner.java:51)
+	at liquibase.integration.commandline.CommandRunner.call(CommandRunner.java:21)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2045)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2465)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2457)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2419)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2277)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2421)
+	at picocli.CommandLine.execute(CommandLine.java:2174)
+	at liquibase.integration.commandline.LiquibaseCommandLine.lambda$execute$2(LiquibaseCommandLine.java:391)
+	at liquibase.Scope.child(Scope.java:203)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.integration.commandline.LiquibaseCommandLine.lambda$execute$3(LiquibaseCommandLine.java:366)
+	at liquibase.Scope.child(Scope.java:203)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.integration.commandline.LiquibaseCommandLine.execute(LiquibaseCommandLine.java:363)
+	at liquibase.integration.commandline.LiquibaseCommandLine.main(LiquibaseCommandLine.java:98)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at liquibase.integration.commandline.LiquibaseLauncher.main(LiquibaseLauncher.java:116)
+Caused by: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: Connection could not be created to ${LIQUIBASE_URL} with driver com.mysql.cj.jdbc.Driver.  Possibly the wrong driver for the given database URL
+	at liquibase.command.core.helpers.AbstractDatabaseConnectionCommandStep.createDatabaseObject(AbstractDatabaseConnectionCommandStep.java:106)
+	at liquibase.command.core.helpers.DbUrlConnectionCommandStep.obtainDatabase(DbUrlConnectionCommandStep.java:106)
+	at liquibase.command.core.helpers.DbUrlConnectionCommandStep.run(DbUrlConnectionCommandStep.java:83)
+	at liquibase.command.CommandScope.lambda$execute$6(CommandScope.java:231)
+	... 24 more
+Caused by: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: Connection could not be created to ${LIQUIBASE_URL} with driver com.mysql.cj.jdbc.Driver.  Possibly the wrong driver for the given database URL
+	at liquibase.database.DatabaseFactory.openConnection(DatabaseFactory.java:241)
+	at liquibase.database.DatabaseFactory.openConnection(DatabaseFactory.java:188)
+	at liquibase.database.DatabaseFactory.openDatabase(DatabaseFactory.java:153)
+	at liquibase.command.core.helpers.AbstractDatabaseConnectionCommandStep.createDatabaseObject(AbstractDatabaseConnectionCommandStep.java:74)
+	... 27 more
+Caused by: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: Connection could not be created to ${LIQUIBASE_URL} with driver com.mysql.cj.jdbc.Driver.  Possibly the wrong driver for the given database URL
+	at liquibase.database.ConnectionServiceFactory.create(ConnectionServiceFactory.java:35)
+	at liquibase.database.DatabaseFactory.openConnection(DatabaseFactory.java:238)
+	... 30 more
+Caused by: liquibase.exception.DatabaseException: Connection could not be created to ${LIQUIBASE_URL} with driver com.mysql.cj.jdbc.Driver.  Possibly the wrong driver for the given database URL
+	at liquibase.database.jvm.JdbcConnection.open(JdbcConnection.java:44)
+	at com.datical.liquibase.ext.database.jvm.ProJdbcConnection.open(ProJdbcConnection.java:33)
+	at liquibase.database.ConnectionServiceFactory.create(ConnectionServiceFactory.java:32)
+	... 31 more
+
+[2026-04-14 18:11:47] INFO [liquibase.ui] Logs saved to liquibase.log
+[2026-04-14 18:12:05] INFO [liquibase.ui] ####################################################
+##   _     _             _ _                      ##
+##  | |   (_)           (_) |                     ##
+##  | |    _  __ _ _   _ _| |__   __ _ ___  ___   ##
+##  | |   | |/ _` | | | | | '_ \ / _` / __|/ _ \  ##
+##  | |___| | (_| | |_| | | |_) | (_| \__ \  __/  ##
+##  \_____/_|\__, |\__,_|_|_.__/ \__,_|___/\___|  ##
+##              | |                               ##
+##              |_|                               ##
+##                                                ## 
+##  Get documentation at docs.liquibase.com       ##
+##  Get certified courses at learn.liquibase.com  ## 
+##                                                ##
+####################################################
+Starting Liquibase at 18:12:05 using Java 21.0.5 (version 4.30.0 #4943 built at 2024-10-31 17:00+0000)
+[2026-04-14 18:12:05] INFO [liquibase.ui] Liquibase Version: 4.30.0
+[2026-04-14 18:12:05] INFO [liquibase.ui] Liquibase Open Source 4.30.0 by Liquibase
+[2026-04-14 18:12:05] INFO [liquibase.integration] Starting command execution.
+[2026-04-14 18:12:05] INFO [liquibase.ui] WARNING: 
+
+Liquibase detected the following invalid LIQUIBASE_* environment variables:
+
+- LIQUIBASE_PASSWORD
+- LIQUIBASE_URL
+- LIQUIBASE_USERNAME
+
+Find the list of valid environment variables at https://docs.liquibase.com/environment-variables
+
+[2026-04-14 18:12:05] WARNING [liquibase.configuration] 
+
+Liquibase detected the following invalid LIQUIBASE_* environment variables:
+
+- LIQUIBASE_PASSWORD
+- LIQUIBASE_URL
+- LIQUIBASE_USERNAME
+
+Find the list of valid environment variables at https://docs.liquibase.com/environment-variables
+
+[2026-04-14 18:12:05] WARNING [liquibase.command] Ignoring the global liquibase.driver value in favor of the command value.
+[2026-04-14 18:12:06] INFO [liquibase.command] Logging exception.
+[2026-04-14 18:12:06] INFO [liquibase.ui] ERROR: Exception Details
+[2026-04-14 18:12:06] INFO [liquibase.ui] ERROR: Exception Primary Class:  DatabaseException
+[2026-04-14 18:12:06] INFO [liquibase.ui] ERROR: Exception Primary Reason:  Connection could not be created to ${LIQUIBASE_URL} with driver com.mysql.cj.jdbc.Driver.  Possibly the wrong driver for the given database URL
+[2026-04-14 18:12:06] INFO [liquibase.ui] ERROR: Exception Primary Source:  4.30.0
+[2026-04-14 18:12:06] INFO [liquibase.command] Command execution complete
+[2026-04-14 18:12:08] SEVERE [liquibase.integration] Connection could not be created to ${LIQUIBASE_URL} with driver com.mysql.cj.jdbc.Driver.  Possibly the wrong driver for the given database URL
+liquibase.exception.CommandExecutionException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: Connection could not be created to ${LIQUIBASE_URL} with driver com.mysql.cj.jdbc.Driver.  Possibly the wrong driver for the given database URL
+	at liquibase.command.CommandScope.lambda$execute$6(CommandScope.java:278)
+	at liquibase.Scope.child(Scope.java:203)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.command.CommandScope.execute(CommandScope.java:219)
+	at liquibase.integration.commandline.CommandRunner.call(CommandRunner.java:51)
+	at liquibase.integration.commandline.CommandRunner.call(CommandRunner.java:21)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2045)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2465)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2457)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2419)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2277)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2421)
+	at picocli.CommandLine.execute(CommandLine.java:2174)
+	at liquibase.integration.commandline.LiquibaseCommandLine.lambda$execute$2(LiquibaseCommandLine.java:391)
+	at liquibase.Scope.child(Scope.java:203)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.integration.commandline.LiquibaseCommandLine.lambda$execute$3(LiquibaseCommandLine.java:366)
+	at liquibase.Scope.child(Scope.java:203)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.integration.commandline.LiquibaseCommandLine.execute(LiquibaseCommandLine.java:363)
+	at liquibase.integration.commandline.LiquibaseCommandLine.main(LiquibaseCommandLine.java:98)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at liquibase.integration.commandline.LiquibaseLauncher.main(LiquibaseLauncher.java:116)
+Caused by: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: Connection could not be created to ${LIQUIBASE_URL} with driver com.mysql.cj.jdbc.Driver.  Possibly the wrong driver for the given database URL
+	at liquibase.command.core.helpers.AbstractDatabaseConnectionCommandStep.createDatabaseObject(AbstractDatabaseConnectionCommandStep.java:106)
+	at liquibase.command.core.helpers.DbUrlConnectionCommandStep.obtainDatabase(DbUrlConnectionCommandStep.java:106)
+	at liquibase.command.core.helpers.DbUrlConnectionCommandStep.run(DbUrlConnectionCommandStep.java:83)
+	at liquibase.command.CommandScope.lambda$execute$6(CommandScope.java:231)
+	... 24 more
+Caused by: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: Connection could not be created to ${LIQUIBASE_URL} with driver com.mysql.cj.jdbc.Driver.  Possibly the wrong driver for the given database URL
+	at liquibase.database.DatabaseFactory.openConnection(DatabaseFactory.java:241)
+	at liquibase.database.DatabaseFactory.openConnection(DatabaseFactory.java:188)
+	at liquibase.database.DatabaseFactory.openDatabase(DatabaseFactory.java:153)
+	at liquibase.command.core.helpers.AbstractDatabaseConnectionCommandStep.createDatabaseObject(AbstractDatabaseConnectionCommandStep.java:74)
+	... 27 more
+Caused by: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: Connection could not be created to ${LIQUIBASE_URL} with driver com.mysql.cj.jdbc.Driver.  Possibly the wrong driver for the given database URL
+	at liquibase.database.ConnectionServiceFactory.create(ConnectionServiceFactory.java:35)
+	at liquibase.database.DatabaseFactory.openConnection(DatabaseFactory.java:238)
+	... 30 more
+Caused by: liquibase.exception.DatabaseException: Connection could not be created to ${LIQUIBASE_URL} with driver com.mysql.cj.jdbc.Driver.  Possibly the wrong driver for the given database URL
+	at liquibase.database.jvm.JdbcConnection.open(JdbcConnection.java:44)
+	at com.datical.liquibase.ext.database.jvm.ProJdbcConnection.open(ProJdbcConnection.java:33)
+	at liquibase.database.ConnectionServiceFactory.create(ConnectionServiceFactory.java:32)
+	... 31 more
+
+[2026-04-14 18:12:08] INFO [liquibase.ui] Logs saved to liquibase.log
+[2026-04-14 18:13:10] INFO [liquibase.ui] ####################################################
+##   _     _             _ _                      ##
+##  | |   (_)           (_) |                     ##
+##  | |    _  __ _ _   _ _| |__   __ _ ___  ___   ##
+##  | |   | |/ _` | | | | | '_ \ / _` / __|/ _ \  ##
+##  | |___| | (_| | |_| | | |_) | (_| \__ \  __/  ##
+##  \_____/_|\__, |\__,_|_|_.__/ \__,_|___/\___|  ##
+##              | |                               ##
+##              |_|                               ##
+##                                                ## 
+##  Get documentation at docs.liquibase.com       ##
+##  Get certified courses at learn.liquibase.com  ## 
+##                                                ##
+####################################################
+Starting Liquibase at 18:13:10 using Java 21.0.5 (version 4.30.0 #4943 built at 2024-10-31 17:00+0000)
+[2026-04-14 18:13:10] INFO [liquibase.ui] Liquibase Version: 4.30.0
+[2026-04-14 18:13:10] INFO [liquibase.ui] Liquibase Open Source 4.30.0 by Liquibase
+[2026-04-14 18:13:10] INFO [liquibase.integration] Starting command execution.
+[2026-04-14 18:13:10] INFO [liquibase.ui] WARNING: 
+
+Liquibase detected the following invalid LIQUIBASE_* environment variables:
+
+- LIQUIBASE_PASSWORD
+- LIQUIBASE_URL
+- LIQUIBASE_USERNAME
+
+Find the list of valid environment variables at https://docs.liquibase.com/environment-variables
+
+[2026-04-14 18:13:10] WARNING [liquibase.configuration] 
+
+Liquibase detected the following invalid LIQUIBASE_* environment variables:
+
+- LIQUIBASE_PASSWORD
+- LIQUIBASE_URL
+- LIQUIBASE_USERNAME
+
+Find the list of valid environment variables at https://docs.liquibase.com/environment-variables
+
+[2026-04-14 18:13:10] WARNING [liquibase.command] Ignoring the global liquibase.driver value in favor of the command value.
+[2026-04-14 18:13:11] INFO [liquibase.command] Logging exception.
+[2026-04-14 18:13:11] INFO [liquibase.ui] ERROR: Exception Details
+[2026-04-14 18:13:11] INFO [liquibase.ui] ERROR: Exception Primary Class:  DatabaseException
+[2026-04-14 18:13:11] INFO [liquibase.ui] ERROR: Exception Primary Reason:  Connection could not be created to ${LIQUIBASE_URL} with driver com.mysql.cj.jdbc.Driver.  Possibly the wrong driver for the given database URL
+[2026-04-14 18:13:11] INFO [liquibase.ui] ERROR: Exception Primary Source:  4.30.0
+[2026-04-14 18:13:11] INFO [liquibase.command] Command execution complete
+[2026-04-14 18:13:13] SEVERE [liquibase.integration] Connection could not be created to ${LIQUIBASE_URL} with driver com.mysql.cj.jdbc.Driver.  Possibly the wrong driver for the given database URL
+liquibase.exception.CommandExecutionException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: Connection could not be created to ${LIQUIBASE_URL} with driver com.mysql.cj.jdbc.Driver.  Possibly the wrong driver for the given database URL
+	at liquibase.command.CommandScope.lambda$execute$6(CommandScope.java:278)
+	at liquibase.Scope.child(Scope.java:203)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.command.CommandScope.execute(CommandScope.java:219)
+	at liquibase.integration.commandline.CommandRunner.call(CommandRunner.java:51)
+	at liquibase.integration.commandline.CommandRunner.call(CommandRunner.java:21)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2045)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2465)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2457)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2419)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2277)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2421)
+	at picocli.CommandLine.execute(CommandLine.java:2174)
+	at liquibase.integration.commandline.LiquibaseCommandLine.lambda$execute$2(LiquibaseCommandLine.java:391)
+	at liquibase.Scope.child(Scope.java:203)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.integration.commandline.LiquibaseCommandLine.lambda$execute$3(LiquibaseCommandLine.java:366)
+	at liquibase.Scope.child(Scope.java:203)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.integration.commandline.LiquibaseCommandLine.execute(LiquibaseCommandLine.java:363)
+	at liquibase.integration.commandline.LiquibaseCommandLine.main(LiquibaseCommandLine.java:98)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at liquibase.integration.commandline.LiquibaseLauncher.main(LiquibaseLauncher.java:116)
+Caused by: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: Connection could not be created to ${LIQUIBASE_URL} with driver com.mysql.cj.jdbc.Driver.  Possibly the wrong driver for the given database URL
+	at liquibase.command.core.helpers.AbstractDatabaseConnectionCommandStep.createDatabaseObject(AbstractDatabaseConnectionCommandStep.java:106)
+	at liquibase.command.core.helpers.DbUrlConnectionCommandStep.obtainDatabase(DbUrlConnectionCommandStep.java:106)
+	at liquibase.command.core.helpers.DbUrlConnectionCommandStep.run(DbUrlConnectionCommandStep.java:83)
+	at liquibase.command.CommandScope.lambda$execute$6(CommandScope.java:231)
+	... 24 more
+Caused by: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: Connection could not be created to ${LIQUIBASE_URL} with driver com.mysql.cj.jdbc.Driver.  Possibly the wrong driver for the given database URL
+	at liquibase.database.DatabaseFactory.openConnection(DatabaseFactory.java:241)
+	at liquibase.database.DatabaseFactory.openConnection(DatabaseFactory.java:188)
+	at liquibase.database.DatabaseFactory.openDatabase(DatabaseFactory.java:153)
+	at liquibase.command.core.helpers.AbstractDatabaseConnectionCommandStep.createDatabaseObject(AbstractDatabaseConnectionCommandStep.java:74)
+	... 27 more
+Caused by: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: Connection could not be created to ${LIQUIBASE_URL} with driver com.mysql.cj.jdbc.Driver.  Possibly the wrong driver for the given database URL
+	at liquibase.database.ConnectionServiceFactory.create(ConnectionServiceFactory.java:35)
+	at liquibase.database.DatabaseFactory.openConnection(DatabaseFactory.java:238)
+	... 30 more
+Caused by: liquibase.exception.DatabaseException: Connection could not be created to ${LIQUIBASE_URL} with driver com.mysql.cj.jdbc.Driver.  Possibly the wrong driver for the given database URL
+	at liquibase.database.jvm.JdbcConnection.open(JdbcConnection.java:44)
+	at com.datical.liquibase.ext.database.jvm.ProJdbcConnection.open(ProJdbcConnection.java:33)
+	at liquibase.database.ConnectionServiceFactory.create(ConnectionServiceFactory.java:32)
+	... 31 more
+
+[2026-04-14 18:13:13] INFO [liquibase.ui] Logs saved to liquibase.log
+[2026-04-14 18:14:16] INFO [liquibase.ui] ####################################################
+##   _     _             _ _                      ##
+##  | |   (_)           (_) |                     ##
+##  | |    _  __ _ _   _ _| |__   __ _ ___  ___   ##
+##  | |   | |/ _` | | | | | '_ \ / _` / __|/ _ \  ##
+##  | |___| | (_| | |_| | | |_) | (_| \__ \  __/  ##
+##  \_____/_|\__, |\__,_|_|_.__/ \__,_|___/\___|  ##
+##              | |                               ##
+##              |_|                               ##
+##                                                ## 
+##  Get documentation at docs.liquibase.com       ##
+##  Get certified courses at learn.liquibase.com  ## 
+##                                                ##
+####################################################
+Starting Liquibase at 18:14:16 using Java 21.0.5 (version 4.30.0 #4943 built at 2024-10-31 17:00+0000)
+[2026-04-14 18:14:16] INFO [liquibase.ui] Liquibase Version: 4.30.0
+[2026-04-14 18:14:16] INFO [liquibase.ui] Liquibase Open Source 4.30.0 by Liquibase
+[2026-04-14 18:14:17] INFO [liquibase.integration] Starting command execution.
+[2026-04-14 18:14:17] INFO [liquibase.ui] WARNING: 
+
+Liquibase detected the following invalid LIQUIBASE_* environment variables:
+
+- LIQUIBASE_PASSWORD
+- LIQUIBASE_URL
+- LIQUIBASE_USERNAME
+
+Find the list of valid environment variables at https://docs.liquibase.com/environment-variables
+
+[2026-04-14 18:14:17] WARNING [liquibase.configuration] 
+
+Liquibase detected the following invalid LIQUIBASE_* environment variables:
+
+- LIQUIBASE_PASSWORD
+- LIQUIBASE_URL
+- LIQUIBASE_USERNAME
+
+Find the list of valid environment variables at https://docs.liquibase.com/environment-variables
+
+[2026-04-14 18:14:17] WARNING [liquibase.command] Ignoring the global liquibase.driver value in favor of the command value.
+[2026-04-14 18:14:17] INFO [liquibase.command] Logging exception.
+[2026-04-14 18:14:17] INFO [liquibase.ui] ERROR: Exception Details
+[2026-04-14 18:14:17] INFO [liquibase.ui] ERROR: Exception Primary Class:  DatabaseException
+[2026-04-14 18:14:17] INFO [liquibase.ui] ERROR: Exception Primary Reason:  Connection could not be created to ${LIQUIBASE_URL} with driver com.mysql.cj.jdbc.Driver.  Possibly the wrong driver for the given database URL
+[2026-04-14 18:14:17] INFO [liquibase.ui] ERROR: Exception Primary Source:  4.30.0
+[2026-04-14 18:14:17] INFO [liquibase.command] Command execution complete
+[2026-04-14 18:14:19] SEVERE [liquibase.integration] Connection could not be created to ${LIQUIBASE_URL} with driver com.mysql.cj.jdbc.Driver.  Possibly the wrong driver for the given database URL
+liquibase.exception.CommandExecutionException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: Connection could not be created to ${LIQUIBASE_URL} with driver com.mysql.cj.jdbc.Driver.  Possibly the wrong driver for the given database URL
+	at liquibase.command.CommandScope.lambda$execute$6(CommandScope.java:278)
+	at liquibase.Scope.child(Scope.java:203)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.command.CommandScope.execute(CommandScope.java:219)
+	at liquibase.integration.commandline.CommandRunner.call(CommandRunner.java:51)
+	at liquibase.integration.commandline.CommandRunner.call(CommandRunner.java:21)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2045)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2465)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2457)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2419)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2277)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2421)
+	at picocli.CommandLine.execute(CommandLine.java:2174)
+	at liquibase.integration.commandline.LiquibaseCommandLine.lambda$execute$2(LiquibaseCommandLine.java:391)
+	at liquibase.Scope.child(Scope.java:203)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.integration.commandline.LiquibaseCommandLine.lambda$execute$3(LiquibaseCommandLine.java:366)
+	at liquibase.Scope.child(Scope.java:203)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.integration.commandline.LiquibaseCommandLine.execute(LiquibaseCommandLine.java:363)
+	at liquibase.integration.commandline.LiquibaseCommandLine.main(LiquibaseCommandLine.java:98)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at liquibase.integration.commandline.LiquibaseLauncher.main(LiquibaseLauncher.java:116)
+Caused by: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: Connection could not be created to ${LIQUIBASE_URL} with driver com.mysql.cj.jdbc.Driver.  Possibly the wrong driver for the given database URL
+	at liquibase.command.core.helpers.AbstractDatabaseConnectionCommandStep.createDatabaseObject(AbstractDatabaseConnectionCommandStep.java:106)
+	at liquibase.command.core.helpers.DbUrlConnectionCommandStep.obtainDatabase(DbUrlConnectionCommandStep.java:106)
+	at liquibase.command.core.helpers.DbUrlConnectionCommandStep.run(DbUrlConnectionCommandStep.java:83)
+	at liquibase.command.CommandScope.lambda$execute$6(CommandScope.java:231)
+	... 24 more
+Caused by: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: Connection could not be created to ${LIQUIBASE_URL} with driver com.mysql.cj.jdbc.Driver.  Possibly the wrong driver for the given database URL
+	at liquibase.database.DatabaseFactory.openConnection(DatabaseFactory.java:241)
+	at liquibase.database.DatabaseFactory.openConnection(DatabaseFactory.java:188)
+	at liquibase.database.DatabaseFactory.openDatabase(DatabaseFactory.java:153)
+	at liquibase.command.core.helpers.AbstractDatabaseConnectionCommandStep.createDatabaseObject(AbstractDatabaseConnectionCommandStep.java:74)
+	... 27 more
+Caused by: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: Connection could not be created to ${LIQUIBASE_URL} with driver com.mysql.cj.jdbc.Driver.  Possibly the wrong driver for the given database URL
+	at liquibase.database.ConnectionServiceFactory.create(ConnectionServiceFactory.java:35)
+	at liquibase.database.DatabaseFactory.openConnection(DatabaseFactory.java:238)
+	... 30 more
+Caused by: liquibase.exception.DatabaseException: Connection could not be created to ${LIQUIBASE_URL} with driver com.mysql.cj.jdbc.Driver.  Possibly the wrong driver for the given database URL
+	at liquibase.database.jvm.JdbcConnection.open(JdbcConnection.java:44)
+	at com.datical.liquibase.ext.database.jvm.ProJdbcConnection.open(ProJdbcConnection.java:33)
+	at liquibase.database.ConnectionServiceFactory.create(ConnectionServiceFactory.java:32)
+	... 31 more
+
+[2026-04-14 18:14:19] INFO [liquibase.ui] Logs saved to liquibase.log
+[2026-04-14 18:16:04] INFO [liquibase.ui] ####################################################
+##   _     _             _ _                      ##
+##  | |   (_)           (_) |                     ##
+##  | |    _  __ _ _   _ _| |__   __ _ ___  ___   ##
+##  | |   | |/ _` | | | | | '_ \ / _` / __|/ _ \  ##
+##  | |___| | (_| | |_| | | |_) | (_| \__ \  __/  ##
+##  \_____/_|\__, |\__,_|_|_.__/ \__,_|___/\___|  ##
+##              | |                               ##
+##              |_|                               ##
+##                                                ## 
+##  Get documentation at docs.liquibase.com       ##
+##  Get certified courses at learn.liquibase.com  ## 
+##                                                ##
+####################################################
+Starting Liquibase at 18:16:04 using Java 21.0.5 (version 4.30.0 #4943 built at 2024-10-31 17:00+0000)
+[2026-04-14 18:16:04] INFO [liquibase.ui] Liquibase Version: 4.30.0
+[2026-04-14 18:16:04] INFO [liquibase.ui] Liquibase Open Source 4.30.0 by Liquibase
+[2026-04-14 18:16:04] INFO [liquibase.integration] Starting command execution.
+[2026-04-14 18:16:04] INFO [liquibase.ui] WARNING: 
+
+Liquibase detected the following invalid LIQUIBASE_* environment variables:
+
+- LIQUIBASE_PASSWORD
+- LIQUIBASE_URL
+- LIQUIBASE_USERNAME
+
+Find the list of valid environment variables at https://docs.liquibase.com/environment-variables
+
+[2026-04-14 18:16:04] WARNING [liquibase.configuration] 
+
+Liquibase detected the following invalid LIQUIBASE_* environment variables:
+
+- LIQUIBASE_PASSWORD
+- LIQUIBASE_URL
+- LIQUIBASE_USERNAME
+
+Find the list of valid environment variables at https://docs.liquibase.com/environment-variables
+
+[2026-04-14 18:16:04] WARNING [liquibase.command] Ignoring the global liquibase.driver value in favor of the command value.
+[2026-04-14 18:16:05] INFO [liquibase.command] Logging exception.
+[2026-04-14 18:16:05] INFO [liquibase.ui] ERROR: Exception Details
+[2026-04-14 18:16:05] INFO [liquibase.ui] ERROR: Exception Primary Class:  DatabaseException
+[2026-04-14 18:16:05] INFO [liquibase.ui] ERROR: Exception Primary Reason:  Connection could not be created to ${LIQUIBASE_URL} with driver com.mysql.cj.jdbc.Driver.  Possibly the wrong driver for the given database URL
+[2026-04-14 18:16:05] INFO [liquibase.ui] ERROR: Exception Primary Source:  4.30.0
+[2026-04-14 18:16:05] INFO [liquibase.command] Command execution complete
+[2026-04-14 18:16:06] SEVERE [liquibase.integration] Connection could not be created to ${LIQUIBASE_URL} with driver com.mysql.cj.jdbc.Driver.  Possibly the wrong driver for the given database URL
+liquibase.exception.CommandExecutionException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: Connection could not be created to ${LIQUIBASE_URL} with driver com.mysql.cj.jdbc.Driver.  Possibly the wrong driver for the given database URL
+	at liquibase.command.CommandScope.lambda$execute$6(CommandScope.java:278)
+	at liquibase.Scope.child(Scope.java:203)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.command.CommandScope.execute(CommandScope.java:219)
+	at liquibase.integration.commandline.CommandRunner.call(CommandRunner.java:51)
+	at liquibase.integration.commandline.CommandRunner.call(CommandRunner.java:21)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2045)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2465)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2457)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2419)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2277)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2421)
+	at picocli.CommandLine.execute(CommandLine.java:2174)
+	at liquibase.integration.commandline.LiquibaseCommandLine.lambda$execute$2(LiquibaseCommandLine.java:391)
+	at liquibase.Scope.child(Scope.java:203)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.integration.commandline.LiquibaseCommandLine.lambda$execute$3(LiquibaseCommandLine.java:366)
+	at liquibase.Scope.child(Scope.java:203)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.integration.commandline.LiquibaseCommandLine.execute(LiquibaseCommandLine.java:363)
+	at liquibase.integration.commandline.LiquibaseCommandLine.main(LiquibaseCommandLine.java:98)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at liquibase.integration.commandline.LiquibaseLauncher.main(LiquibaseLauncher.java:116)
+Caused by: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: Connection could not be created to ${LIQUIBASE_URL} with driver com.mysql.cj.jdbc.Driver.  Possibly the wrong driver for the given database URL
+	at liquibase.command.core.helpers.AbstractDatabaseConnectionCommandStep.createDatabaseObject(AbstractDatabaseConnectionCommandStep.java:106)
+	at liquibase.command.core.helpers.DbUrlConnectionCommandStep.obtainDatabase(DbUrlConnectionCommandStep.java:106)
+	at liquibase.command.core.helpers.DbUrlConnectionCommandStep.run(DbUrlConnectionCommandStep.java:83)
+	at liquibase.command.CommandScope.lambda$execute$6(CommandScope.java:231)
+	... 24 more
+Caused by: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: Connection could not be created to ${LIQUIBASE_URL} with driver com.mysql.cj.jdbc.Driver.  Possibly the wrong driver for the given database URL
+	at liquibase.database.DatabaseFactory.openConnection(DatabaseFactory.java:241)
+	at liquibase.database.DatabaseFactory.openConnection(DatabaseFactory.java:188)
+	at liquibase.database.DatabaseFactory.openDatabase(DatabaseFactory.java:153)
+	at liquibase.command.core.helpers.AbstractDatabaseConnectionCommandStep.createDatabaseObject(AbstractDatabaseConnectionCommandStep.java:74)
+	... 27 more
+Caused by: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: Connection could not be created to ${LIQUIBASE_URL} with driver com.mysql.cj.jdbc.Driver.  Possibly the wrong driver for the given database URL
+	at liquibase.database.ConnectionServiceFactory.create(ConnectionServiceFactory.java:35)
+	at liquibase.database.DatabaseFactory.openConnection(DatabaseFactory.java:238)
+	... 30 more
+Caused by: liquibase.exception.DatabaseException: Connection could not be created to ${LIQUIBASE_URL} with driver com.mysql.cj.jdbc.Driver.  Possibly the wrong driver for the given database URL
+	at liquibase.database.jvm.JdbcConnection.open(JdbcConnection.java:44)
+	at com.datical.liquibase.ext.database.jvm.ProJdbcConnection.open(ProJdbcConnection.java:33)
+	at liquibase.database.ConnectionServiceFactory.create(ConnectionServiceFactory.java:32)
+	... 31 more
+
+[2026-04-14 18:16:06] INFO [liquibase.ui] Logs saved to liquibase.log
+[2026-04-14 18:19:12] INFO [liquibase.ui] ####################################################
+##   _     _             _ _                      ##
+##  | |   (_)           (_) |                     ##
+##  | |    _  __ _ _   _ _| |__   __ _ ___  ___   ##
+##  | |   | |/ _` | | | | | '_ \ / _` / __|/ _ \  ##
+##  | |___| | (_| | |_| | | |_) | (_| \__ \  __/  ##
+##  \_____/_|\__, |\__,_|_|_.__/ \__,_|___/\___|  ##
+##              | |                               ##
+##              |_|                               ##
+##                                                ## 
+##  Get documentation at docs.liquibase.com       ##
+##  Get certified courses at learn.liquibase.com  ## 
+##                                                ##
+####################################################
+Starting Liquibase at 18:19:12 using Java 21.0.5 (version 4.30.0 #4943 built at 2024-10-31 17:00+0000)
+[2026-04-14 18:19:12] INFO [liquibase.ui] Liquibase Version: 4.30.0
+[2026-04-14 18:19:12] INFO [liquibase.ui] Liquibase Open Source 4.30.0 by Liquibase
+[2026-04-14 18:19:12] INFO [liquibase.integration] Starting command execution.
+[2026-04-14 18:19:12] INFO [liquibase.ui] WARNING: 
+
+Liquibase detected the following invalid LIQUIBASE_* environment variables:
+
+- LIQUIBASE_PASSWORD
+- LIQUIBASE_URL
+- LIQUIBASE_USERNAME
+
+Find the list of valid environment variables at https://docs.liquibase.com/environment-variables
+
+[2026-04-14 18:19:12] WARNING [liquibase.configuration] 
+
+Liquibase detected the following invalid LIQUIBASE_* environment variables:
+
+- LIQUIBASE_PASSWORD
+- LIQUIBASE_URL
+- LIQUIBASE_USERNAME
+
+Find the list of valid environment variables at https://docs.liquibase.com/environment-variables
+
+[2026-04-14 18:19:12] WARNING [liquibase.command] Ignoring the global liquibase.driver value in favor of the command value.
+[2026-04-14 18:19:18] INFO [liquibase.changelog] Reading from mop.DATABASECHANGELOG
+[2026-04-14 18:19:18] INFO [liquibase.command] Command execution complete
+[2026-04-14 18:19:19] INFO [liquibase.ui] Logs saved to liquibase.log
+[2026-04-14 18:19:19] INFO [liquibase.ui] Liquibase command 'status' was executed successfully.
+[2026-04-14 18:21:42] INFO [liquibase.ui] ####################################################
+##   _     _             _ _                      ##
+##  | |   (_)           (_) |                     ##
+##  | |    _  __ _ _   _ _| |__   __ _ ___  ___   ##
+##  | |   | |/ _` | | | | | '_ \ / _` / __|/ _ \  ##
+##  | |___| | (_| | |_| | | |_) | (_| \__ \  __/  ##
+##  \_____/_|\__, |\__,_|_|_.__/ \__,_|___/\___|  ##
+##              | |                               ##
+##              |_|                               ##
+##                                                ## 
+##  Get documentation at docs.liquibase.com       ##
+##  Get certified courses at learn.liquibase.com  ## 
+##                                                ##
+####################################################
+Starting Liquibase at 18:21:42 using Java 21.0.5 (version 4.30.0 #4943 built at 2024-10-31 17:00+0000)
+[2026-04-14 18:21:42] INFO [liquibase.ui] Liquibase Version: 4.30.0
+[2026-04-14 18:21:42] INFO [liquibase.ui] Liquibase Open Source 4.30.0 by Liquibase
+[2026-04-14 18:21:42] INFO [liquibase.integration] Starting command execution.
+[2026-04-14 18:21:42] INFO [liquibase.ui] WARNING: 
+
+Liquibase detected the following invalid LIQUIBASE_* environment variables:
+
+- LIQUIBASE_PASSWORD
+- LIQUIBASE_URL
+- LIQUIBASE_USERNAME
+
+Find the list of valid environment variables at https://docs.liquibase.com/environment-variables
+
+[2026-04-14 18:21:42] WARNING [liquibase.configuration] 
+
+Liquibase detected the following invalid LIQUIBASE_* environment variables:
+
+- LIQUIBASE_PASSWORD
+- LIQUIBASE_URL
+- LIQUIBASE_USERNAME
+
+Find the list of valid environment variables at https://docs.liquibase.com/environment-variables
+
+[2026-04-14 18:21:42] WARNING [liquibase.command] Ignoring the global liquibase.driver value in favor of the command value.
+[2026-04-14 18:21:48] INFO [liquibase.changelog] Reading from mop.DATABASECHANGELOG
+[2026-04-14 18:21:48] INFO [liquibase.command] Command execution complete
+[2026-04-14 18:21:50] INFO [liquibase.ui] Logs saved to liquibase.log
+[2026-04-14 18:21:50] INFO [liquibase.ui] Liquibase command 'status' was executed successfully.
+[2026-04-14 18:21:58] INFO [liquibase.ui] ####################################################
+##   _     _             _ _                      ##
+##  | |   (_)           (_) |                     ##
+##  | |    _  __ _ _   _ _| |__   __ _ ___  ___   ##
+##  | |   | |/ _` | | | | | '_ \ / _` / __|/ _ \  ##
+##  | |___| | (_| | |_| | | |_) | (_| \__ \  __/  ##
+##  \_____/_|\__, |\__,_|_|_.__/ \__,_|___/\___|  ##
+##              | |                               ##
+##              |_|                               ##
+##                                                ## 
+##  Get documentation at docs.liquibase.com       ##
+##  Get certified courses at learn.liquibase.com  ## 
+##                                                ##
+####################################################
+Starting Liquibase at 18:21:58 using Java 21.0.5 (version 4.30.0 #4943 built at 2024-10-31 17:00+0000)
+[2026-04-14 18:21:58] INFO [liquibase.ui] Liquibase Version: 4.30.0
+[2026-04-14 18:21:58] INFO [liquibase.ui] Liquibase Open Source 4.30.0 by Liquibase
+[2026-04-14 18:21:58] INFO [liquibase.integration] Starting command execution.
+[2026-04-14 18:21:58] INFO [liquibase.ui] WARNING: 
+
+Liquibase detected the following invalid LIQUIBASE_* environment variables:
+
+- LIQUIBASE_PASSWORD
+- LIQUIBASE_URL
+- LIQUIBASE_USERNAME
+
+Find the list of valid environment variables at https://docs.liquibase.com/environment-variables
+
+[2026-04-14 18:21:58] WARNING [liquibase.configuration] 
+
+Liquibase detected the following invalid LIQUIBASE_* environment variables:
+
+- LIQUIBASE_PASSWORD
+- LIQUIBASE_URL
+- LIQUIBASE_USERNAME
+
+Find the list of valid environment variables at https://docs.liquibase.com/environment-variables
+
+[2026-04-14 18:21:58] WARNING [liquibase.command] Ignoring the global liquibase.driver value in favor of the command value.
+[2026-04-14 18:22:03] INFO [liquibase.changelog] Reading from mop.DATABASECHANGELOG
+[2026-04-14 18:22:05] INFO [liquibase.ui] Database is up to date, no changesets to execute
+[2026-04-14 18:22:05] INFO [liquibase.changelog] Reading from mop.DATABASECHANGELOG
+[2026-04-14 18:22:05] INFO [liquibase.util] UPDATE SUMMARY
+[2026-04-14 18:22:05] INFO [liquibase.util] Run:                          0
+[2026-04-14 18:22:05] INFO [liquibase.util] Previously run:               1
+[2026-04-14 18:22:05] INFO [liquibase.util] Filtered out:                 0
+[2026-04-14 18:22:05] INFO [liquibase.util] -------------------------------
+[2026-04-14 18:22:05] INFO [liquibase.util] Total change sets:            1
+[2026-04-14 18:22:05] INFO [liquibase.util] Update summary generated
+[2026-04-14 18:22:05] INFO [liquibase.command] Command execution complete
+[2026-04-14 18:22:06] INFO [liquibase.ui] Logs saved to liquibase.log
+[2026-04-14 18:22:06] INFO [liquibase.ui] Liquibase command 'update' was executed successfully.
+[2026-04-20 16:53:28] INFO [liquibase.ui] ####################################################
+##   _     _             _ _                      ##
+##  | |   (_)           (_) |                     ##
+##  | |    _  __ _ _   _ _| |__   __ _ ___  ___   ##
+##  | |   | |/ _` | | | | | '_ \ / _` / __|/ _ \  ##
+##  | |___| | (_| | |_| | | |_) | (_| \__ \  __/  ##
+##  \_____/_|\__, |\__,_|_|_.__/ \__,_|___/\___|  ##
+##              | |                               ##
+##              |_|                               ##
+##                                                ## 
+##  Get documentation at docs.liquibase.com       ##
+##  Get certified courses at learn.liquibase.com  ## 
+##                                                ##
+####################################################
+Starting Liquibase at 16:53:28 using Java 21.0.5 (version 4.30.0 #4943 built at 2024-10-31 17:00+0000)
+[2026-04-20 16:53:28] INFO [liquibase.ui] Liquibase Version: 4.30.0
+[2026-04-20 16:53:28] INFO [liquibase.ui] Liquibase Open Source 4.30.0 by Liquibase
+[2026-04-20 16:53:28] INFO [liquibase.integration] Starting command execution.
+[2026-04-20 16:53:28] INFO [liquibase.ui] WARNING: 
+
+Liquibase detected the following invalid LIQUIBASE_* environment variables:
+
+- LIQUIBASE_PASSWORD
+- LIQUIBASE_URL
+- LIQUIBASE_USERNAME
+
+Find the list of valid environment variables at https://docs.liquibase.com/environment-variables
+
+[2026-04-20 16:53:28] WARNING [liquibase.configuration] 
+
+Liquibase detected the following invalid LIQUIBASE_* environment variables:
+
+- LIQUIBASE_PASSWORD
+- LIQUIBASE_URL
+- LIQUIBASE_USERNAME
+
+Find the list of valid environment variables at https://docs.liquibase.com/environment-variables
+
+[2026-04-20 16:53:28] WARNING [liquibase.command] Ignoring the global liquibase.driver value in favor of the command value.
+[2026-04-20 16:53:32] INFO [liquibase.command] Logging exception.
+[2026-04-20 16:53:32] INFO [liquibase.ui] ERROR: Exception Details
+[2026-04-20 16:53:32] INFO [liquibase.ui] ERROR: Exception Primary Class:  FileNotFoundException
+[2026-04-20 16:53:32] INFO [liquibase.ui] ERROR: Exception Primary Reason:  The file changelog/changelog.sql was not found in the configured search path:
+    - C:\Repos\liquibase_mopdb
+    - C:\Program Files\liquibase\internal\lib\liquibase-core.jar
+    - C:\Program Files\liquibase\lib\mysql-connector-j-9.6.0.jar
+    - C:\Program Files\liquibase\lib
+    - C:\Program Files\liquibase\internal\lib\commons-collections4.jar
+    - C:\Program Files\liquibase\internal\lib\commons-io.jar
+    - C:\Program Files\liquibase\internal\lib\commons-lang3.jar
+    - C:\Program Files\liquibase\internal\lib\commons-text.jar
+    - C:\Program Files\liquibase\internal\lib\h2.jar
+    - C:\Program Files\liquibase\internal\lib\hsqldb.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-api.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-core.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-runtime.jar
+    - C:\Program Files\liquibase\internal\lib\jaybird.jar
+    - C:\Program Files\liquibase\internal\lib\jcc.jar
+    - C:\Program Files\liquibase\internal\lib\liquibase-commercial.jar
+    - C:\Program Files\liquibase\internal\lib\mariadb-java-client.jar
+    - C:\Program Files\liquibase\internal\lib\mssql-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib\ojdbc8.jar
+    - C:\Program Files\liquibase\internal\lib\opencsv.jar
+    - C:\Program Files\liquibase\internal\lib\picocli.jar
+    - C:\Program Files\liquibase\internal\lib\postgresql.jar
+    - C:\Program Files\liquibase\internal\lib\slf4j-api.jar
+    - C:\Program Files\liquibase\internal\lib\slf4j-simple.jar
+    - C:\Program Files\liquibase\internal\lib\snakeyaml.jar
+    - C:\Program Files\liquibase\internal\lib\snowflake-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib\sqlite-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib
+    - C:\Program Files\liquibase\internal\extensions\liquibase-commercial-bigquery.jar
+    - C:\Program Files\liquibase\internal\extensions
+More locations can be added with the 'searchPath' parameter.
+[2026-04-20 16:53:32] INFO [liquibase.ui] ERROR: Exception Primary Source:  MySQL 8.0.42
+[2026-04-20 16:53:32] INFO [liquibase.command] Command execution complete
+[2026-04-20 16:53:33] SEVERE [liquibase.integration] The file changelog/changelog.sql was not found in the configured search path:
+    - C:\Repos\liquibase_mopdb
+    - C:\Program Files\liquibase\internal\lib\liquibase-core.jar
+    - C:\Program Files\liquibase\lib\mysql-connector-j-9.6.0.jar
+    - C:\Program Files\liquibase\lib
+    - C:\Program Files\liquibase\internal\lib\commons-collections4.jar
+    - C:\Program Files\liquibase\internal\lib\commons-io.jar
+    - C:\Program Files\liquibase\internal\lib\commons-lang3.jar
+    - C:\Program Files\liquibase\internal\lib\commons-text.jar
+    - C:\Program Files\liquibase\internal\lib\h2.jar
+    - C:\Program Files\liquibase\internal\lib\hsqldb.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-api.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-core.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-runtime.jar
+    - C:\Program Files\liquibase\internal\lib\jaybird.jar
+    - C:\Program Files\liquibase\internal\lib\jcc.jar
+    - C:\Program Files\liquibase\internal\lib\liquibase-commercial.jar
+    - C:\Program Files\liquibase\internal\lib\mariadb-java-client.jar
+    - C:\Program Files\liquibase\internal\lib\mssql-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib\ojdbc8.jar
+    - C:\Program Files\liquibase\internal\lib\opencsv.jar
+    - C:\Program Files\liquibase\internal\lib\picocli.jar
+    - C:\Program Files\liquibase\internal\lib\postgresql.jar
+    - C:\Program Files\liquibase\internal\lib\slf4j-api.jar
+    - C:\Program Files\liquibase\internal\lib\slf4j-simple.jar
+    - C:\Program Files\liquibase\internal\lib\snakeyaml.jar
+    - C:\Program Files\liquibase\internal\lib\snowflake-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib\sqlite-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib
+    - C:\Program Files\liquibase\internal\extensions\liquibase-commercial-bigquery.jar
+    - C:\Program Files\liquibase\internal\extensions
+More locations can be added with the 'searchPath' parameter.
+liquibase.exception.CommandExecutionException: liquibase.exception.ChangeLogParseException: java.io.FileNotFoundException: The file changelog/changelog.sql was not found in the configured search path:
+    - C:\Repos\liquibase_mopdb
+    - C:\Program Files\liquibase\internal\lib\liquibase-core.jar
+    - C:\Program Files\liquibase\lib\mysql-connector-j-9.6.0.jar
+    - C:\Program Files\liquibase\lib
+    - C:\Program Files\liquibase\internal\lib\commons-collections4.jar
+    - C:\Program Files\liquibase\internal\lib\commons-io.jar
+    - C:\Program Files\liquibase\internal\lib\commons-lang3.jar
+    - C:\Program Files\liquibase\internal\lib\commons-text.jar
+    - C:\Program Files\liquibase\internal\lib\h2.jar
+    - C:\Program Files\liquibase\internal\lib\hsqldb.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-api.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-core.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-runtime.jar
+    - C:\Program Files\liquibase\internal\lib\jaybird.jar
+    - C:\Program Files\liquibase\internal\lib\jcc.jar
+    - C:\Program Files\liquibase\internal\lib\liquibase-commercial.jar
+    - C:\Program Files\liquibase\internal\lib\mariadb-java-client.jar
+    - C:\Program Files\liquibase\internal\lib\mssql-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib\ojdbc8.jar
+    - C:\Program Files\liquibase\internal\lib\opencsv.jar
+    - C:\Program Files\liquibase\internal\lib\picocli.jar
+    - C:\Program Files\liquibase\internal\lib\postgresql.jar
+    - C:\Program Files\liquibase\internal\lib\slf4j-api.jar
+    - C:\Program Files\liquibase\internal\lib\slf4j-simple.jar
+    - C:\Program Files\liquibase\internal\lib\snakeyaml.jar
+    - C:\Program Files\liquibase\internal\lib\snowflake-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib\sqlite-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib
+    - C:\Program Files\liquibase\internal\extensions\liquibase-commercial-bigquery.jar
+    - C:\Program Files\liquibase\internal\extensions
+More locations can be added with the 'searchPath' parameter.
+	at liquibase.command.CommandScope.lambda$execute$6(CommandScope.java:278)
+	at liquibase.Scope.child(Scope.java:203)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.command.CommandScope.execute(CommandScope.java:219)
+	at liquibase.integration.commandline.CommandRunner.call(CommandRunner.java:51)
+	at liquibase.integration.commandline.CommandRunner.call(CommandRunner.java:21)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2045)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2465)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2457)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2419)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2277)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2421)
+	at picocli.CommandLine.execute(CommandLine.java:2174)
+	at liquibase.integration.commandline.LiquibaseCommandLine.lambda$execute$2(LiquibaseCommandLine.java:391)
+	at liquibase.Scope.child(Scope.java:203)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.integration.commandline.LiquibaseCommandLine.lambda$execute$3(LiquibaseCommandLine.java:366)
+	at liquibase.Scope.child(Scope.java:203)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.integration.commandline.LiquibaseCommandLine.execute(LiquibaseCommandLine.java:363)
+	at liquibase.integration.commandline.LiquibaseCommandLine.main(LiquibaseCommandLine.java:98)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at liquibase.integration.commandline.LiquibaseLauncher.main(LiquibaseLauncher.java:116)
+Caused by: liquibase.exception.ChangeLogParseException: java.io.FileNotFoundException: The file changelog/changelog.sql was not found in the configured search path:
+    - C:\Repos\liquibase_mopdb
+    - C:\Program Files\liquibase\internal\lib\liquibase-core.jar
+    - C:\Program Files\liquibase\lib\mysql-connector-j-9.6.0.jar
+    - C:\Program Files\liquibase\lib
+    - C:\Program Files\liquibase\internal\lib\commons-collections4.jar
+    - C:\Program Files\liquibase\internal\lib\commons-io.jar
+    - C:\Program Files\liquibase\internal\lib\commons-lang3.jar
+    - C:\Program Files\liquibase\internal\lib\commons-text.jar
+    - C:\Program Files\liquibase\internal\lib\h2.jar
+    - C:\Program Files\liquibase\internal\lib\hsqldb.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-api.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-core.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-runtime.jar
+    - C:\Program Files\liquibase\internal\lib\jaybird.jar
+    - C:\Program Files\liquibase\internal\lib\jcc.jar
+    - C:\Program Files\liquibase\internal\lib\liquibase-commercial.jar
+    - C:\Program Files\liquibase\internal\lib\mariadb-java-client.jar
+    - C:\Program Files\liquibase\internal\lib\mssql-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib\ojdbc8.jar
+    - C:\Program Files\liquibase\internal\lib\opencsv.jar
+    - C:\Program Files\liquibase\internal\lib\picocli.jar
+    - C:\Program Files\liquibase\internal\lib\postgresql.jar
+    - C:\Program Files\liquibase\internal\lib\slf4j-api.jar
+    - C:\Program Files\liquibase\internal\lib\slf4j-simple.jar
+    - C:\Program Files\liquibase\internal\lib\snakeyaml.jar
+    - C:\Program Files\liquibase\internal\lib\snowflake-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib\sqlite-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib
+    - C:\Program Files\liquibase\internal\extensions\liquibase-commercial-bigquery.jar
+    - C:\Program Files\liquibase\internal\extensions
+More locations can be added with the 'searchPath' parameter.
+	at liquibase.parser.core.sql.SqlChangeLogParser.parse(SqlChangeLogParser.java:71)
+	at liquibase.command.core.helpers.DatabaseChangelogCommandStep.lambda$getDatabaseChangeLog$0(DatabaseChangelogCommandStep.java:129)
+	at liquibase.Scope.child(Scope.java:203)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.command.core.helpers.DatabaseChangelogCommandStep.getDatabaseChangeLog(DatabaseChangelogCommandStep.java:128)
+	at liquibase.command.core.helpers.DatabaseChangelogCommandStep.run(DatabaseChangelogCommandStep.java:87)
+	at liquibase.command.CommandScope.lambda$execute$6(CommandScope.java:231)
+	... 24 more
+Caused by: java.io.FileNotFoundException: The file changelog/changelog.sql was not found in the configured search path:
+    - C:\Repos\liquibase_mopdb
+    - C:\Program Files\liquibase\internal\lib\liquibase-core.jar
+    - C:\Program Files\liquibase\lib\mysql-connector-j-9.6.0.jar
+    - C:\Program Files\liquibase\lib
+    - C:\Program Files\liquibase\internal\lib\commons-collections4.jar
+    - C:\Program Files\liquibase\internal\lib\commons-io.jar
+    - C:\Program Files\liquibase\internal\lib\commons-lang3.jar
+    - C:\Program Files\liquibase\internal\lib\commons-text.jar
+    - C:\Program Files\liquibase\internal\lib\h2.jar
+    - C:\Program Files\liquibase\internal\lib\hsqldb.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-api.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-core.jar
+    - C:\Program Files\liquibase\internal\lib\jaxb-runtime.jar
+    - C:\Program Files\liquibase\internal\lib\jaybird.jar
+    - C:\Program Files\liquibase\internal\lib\jcc.jar
+    - C:\Program Files\liquibase\internal\lib\liquibase-commercial.jar
+    - C:\Program Files\liquibase\internal\lib\mariadb-java-client.jar
+    - C:\Program Files\liquibase\internal\lib\mssql-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib\ojdbc8.jar
+    - C:\Program Files\liquibase\internal\lib\opencsv.jar
+    - C:\Program Files\liquibase\internal\lib\picocli.jar
+    - C:\Program Files\liquibase\internal\lib\postgresql.jar
+    - C:\Program Files\liquibase\internal\lib\slf4j-api.jar
+    - C:\Program Files\liquibase\internal\lib\slf4j-simple.jar
+    - C:\Program Files\liquibase\internal\lib\snakeyaml.jar
+    - C:\Program Files\liquibase\internal\lib\snowflake-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib\sqlite-jdbc.jar
+    - C:\Program Files\liquibase\internal\lib
+    - C:\Program Files\liquibase\internal\extensions\liquibase-commercial-bigquery.jar
+    - C:\Program Files\liquibase\internal\extensions
+More locations can be added with the 'searchPath' parameter.
+	at liquibase.resource.ResourceAccessor.getExisting(ResourceAccessor.java:222)
+	at liquibase.parser.core.sql.SqlChangeLogParser.parse(SqlChangeLogParser.java:59)
+	... 30 more
+
+[2026-04-20 16:53:33] INFO [liquibase.ui] Logs saved to liquibase.log
+[2026-04-20 16:53:52] INFO [liquibase.ui] ####################################################
+##   _     _             _ _                      ##
+##  | |   (_)           (_) |                     ##
+##  | |    _  __ _ _   _ _| |__   __ _ ___  ___   ##
+##  | |   | |/ _` | | | | | '_ \ / _` / __|/ _ \  ##
+##  | |___| | (_| | |_| | | |_) | (_| \__ \  __/  ##
+##  \_____/_|\__, |\__,_|_|_.__/ \__,_|___/\___|  ##
+##              | |                               ##
+##              |_|                               ##
+##                                                ## 
+##  Get documentation at docs.liquibase.com       ##
+##  Get certified courses at learn.liquibase.com  ## 
+##                                                ##
+####################################################
+Starting Liquibase at 16:53:52 using Java 21.0.5 (version 4.30.0 #4943 built at 2024-10-31 17:00+0000)
+[2026-04-20 16:53:52] INFO [liquibase.ui] Liquibase Version: 4.30.0
+[2026-04-20 16:53:52] INFO [liquibase.ui] Liquibase Open Source 4.30.0 by Liquibase
+[2026-04-20 16:53:52] INFO [liquibase.integration] Starting command execution.
+[2026-04-20 16:53:52] INFO [liquibase.ui] WARNING: 
+
+Liquibase detected the following invalid LIQUIBASE_* environment variables:
+
+- LIQUIBASE_PASSWORD
+- LIQUIBASE_URL
+- LIQUIBASE_USERNAME
+
+Find the list of valid environment variables at https://docs.liquibase.com/environment-variables
+
+[2026-04-20 16:53:52] WARNING [liquibase.configuration] 
+
+Liquibase detected the following invalid LIQUIBASE_* environment variables:
+
+- LIQUIBASE_PASSWORD
+- LIQUIBASE_URL
+- LIQUIBASE_USERNAME
+
+Find the list of valid environment variables at https://docs.liquibase.com/environment-variables
+
+[2026-04-20 16:53:52] WARNING [liquibase.command] Ignoring the global liquibase.driver value in favor of the command value.
+[2026-04-20 16:53:56] INFO [liquibase.command] Logging exception.
+[2026-04-20 16:53:56] INFO [liquibase.ui] ERROR: Exception Details
+[2026-04-20 16:53:56] INFO [liquibase.ui] ERROR: Exception Primary Class:  ChangeLogParseException
+[2026-04-20 16:53:56] INFO [liquibase.ui] ERROR: Exception Primary Reason:  ERROR: Using include with formatted SQL requires a valid Liquibase Pro key. Get a free license key at https://liquibase.com/trial. Add liquibase.licenseKey=<yourKey> into your defaults file or use --license-key=<yourKey> before your command in the CLI.
+[2026-04-20 16:53:56] INFO [liquibase.ui] ERROR: Exception Primary Source:  4.30.0
+[2026-04-20 16:53:56] INFO [liquibase.command] Command execution complete
+[2026-04-20 16:53:57] SEVERE [liquibase.integration] ERROR: Using include with formatted SQL requires a valid Liquibase Pro key. Get a free license key at https://liquibase.com/trial. Add liquibase.licenseKey=<yourKey> into your defaults file or use --license-key=<yourKey> before your command in the CLI.
+liquibase.exception.CommandExecutionException: liquibase.exception.ChangeLogParseException: ERROR: Using include with formatted SQL requires a valid Liquibase Pro key. Get a free license key at https://liquibase.com/trial. Add liquibase.licenseKey=<yourKey> into your defaults file or use --license-key=<yourKey> before your command in the CLI.
+	at liquibase.command.CommandScope.lambda$execute$6(CommandScope.java:278)
+	at liquibase.Scope.child(Scope.java:203)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.command.CommandScope.execute(CommandScope.java:219)
+	at liquibase.integration.commandline.CommandRunner.call(CommandRunner.java:51)
+	at liquibase.integration.commandline.CommandRunner.call(CommandRunner.java:21)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2045)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2465)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2457)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2419)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2277)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2421)
+	at picocli.CommandLine.execute(CommandLine.java:2174)
+	at liquibase.integration.commandline.LiquibaseCommandLine.lambda$execute$2(LiquibaseCommandLine.java:391)
+	at liquibase.Scope.child(Scope.java:203)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.integration.commandline.LiquibaseCommandLine.lambda$execute$3(LiquibaseCommandLine.java:366)
+	at liquibase.Scope.child(Scope.java:203)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.integration.commandline.LiquibaseCommandLine.execute(LiquibaseCommandLine.java:363)
+	at liquibase.integration.commandline.LiquibaseCommandLine.main(LiquibaseCommandLine.java:98)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at liquibase.integration.commandline.LiquibaseLauncher.main(LiquibaseLauncher.java:116)
+Caused by: liquibase.exception.ChangeLogParseException: ERROR: Using include with formatted SQL requires a valid Liquibase Pro key. Get a free license key at https://liquibase.com/trial. Add liquibase.licenseKey=<yourKey> into your defaults file or use --license-key=<yourKey> before your command in the CLI.
+	at com.datical.liquibase.ext.parser.ProFormattedSqlChangeLogParser.handleAdditionalLines(ProFormattedSqlChangeLogParser.java:220)
+	at liquibase.parser.AbstractFormattedChangeLogParser.parse(AbstractFormattedChangeLogParser.java:502)
+	at liquibase.command.core.helpers.DatabaseChangelogCommandStep.lambda$getDatabaseChangeLog$0(DatabaseChangelogCommandStep.java:129)
+	at liquibase.Scope.child(Scope.java:203)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.command.core.helpers.DatabaseChangelogCommandStep.getDatabaseChangeLog(DatabaseChangelogCommandStep.java:128)
+	at liquibase.command.core.helpers.DatabaseChangelogCommandStep.run(DatabaseChangelogCommandStep.java:87)
+	at liquibase.command.CommandScope.lambda$execute$6(CommandScope.java:231)
+	... 24 more
+
+[2026-04-20 16:53:57] INFO [liquibase.ui] Logs saved to liquibase.log
+[2026-04-20 16:54:31] INFO [liquibase.ui] ####################################################
+##   _     _             _ _                      ##
+##  | |   (_)           (_) |                     ##
+##  | |    _  __ _ _   _ _| |__   __ _ ___  ___   ##
+##  | |   | |/ _` | | | | | '_ \ / _` / __|/ _ \  ##
+##  | |___| | (_| | |_| | | |_) | (_| \__ \  __/  ##
+##  \_____/_|\__, |\__,_|_|_.__/ \__,_|___/\___|  ##
+##              | |                               ##
+##              |_|                               ##
+##                                                ## 
+##  Get documentation at docs.liquibase.com       ##
+##  Get certified courses at learn.liquibase.com  ## 
+##                                                ##
+####################################################
+Starting Liquibase at 16:54:31 using Java 21.0.5 (version 4.30.0 #4943 built at 2024-10-31 17:00+0000)
+[2026-04-20 16:54:31] INFO [liquibase.ui] Liquibase Version: 4.30.0
+[2026-04-20 16:54:31] INFO [liquibase.ui] Liquibase Open Source 4.30.0 by Liquibase
+[2026-04-20 16:54:31] INFO [liquibase.integration] Starting command execution.
+[2026-04-20 16:54:31] INFO [liquibase.ui] WARNING: 
+
+Liquibase detected the following invalid LIQUIBASE_* environment variables:
+
+- LIQUIBASE_PASSWORD
+- LIQUIBASE_URL
+- LIQUIBASE_USERNAME
+
+Find the list of valid environment variables at https://docs.liquibase.com/environment-variables
+
+[2026-04-20 16:54:31] WARNING [liquibase.configuration] 
+
+Liquibase detected the following invalid LIQUIBASE_* environment variables:
+
+- LIQUIBASE_PASSWORD
+- LIQUIBASE_URL
+- LIQUIBASE_USERNAME
+
+Find the list of valid environment variables at https://docs.liquibase.com/environment-variables
+
+[2026-04-20 16:54:31] WARNING [liquibase.command] Ignoring the global liquibase.driver value in favor of the command value.
+[2026-04-20 16:54:35] INFO [liquibase.lockservice] Successfully acquired change log lock
+[2026-04-20 16:54:36] INFO [liquibase.lockservice] Successfully released change log lock
+[2026-04-20 16:54:36] INFO [liquibase.command] Logging exception.
+[2026-04-20 16:54:36] INFO [liquibase.ui] ERROR: Exception Details
+[2026-04-20 16:54:36] INFO [liquibase.ui] ERROR: Exception Primary Class:  ChangeLogParseException
+[2026-04-20 16:54:36] INFO [liquibase.ui] ERROR: Exception Primary Reason:  ERROR: Using include with formatted SQL requires a valid Liquibase Pro key. Get a free license key at https://liquibase.com/trial. Add liquibase.licenseKey=<yourKey> into your defaults file or use --license-key=<yourKey> before your command in the CLI.
+[2026-04-20 16:54:36] INFO [liquibase.ui] ERROR: Exception Primary Source:  4.30.0
+[2026-04-20 16:54:36] INFO [liquibase.command] Command execution complete
+[2026-04-20 16:54:37] SEVERE [liquibase.integration] ERROR: Using include with formatted SQL requires a valid Liquibase Pro key. Get a free license key at https://liquibase.com/trial. Add liquibase.licenseKey=<yourKey> into your defaults file or use --license-key=<yourKey> before your command in the CLI.
+liquibase.exception.CommandExecutionException: liquibase.exception.ChangeLogParseException: ERROR: Using include with formatted SQL requires a valid Liquibase Pro key. Get a free license key at https://liquibase.com/trial. Add liquibase.licenseKey=<yourKey> into your defaults file or use --license-key=<yourKey> before your command in the CLI.
+	at liquibase.command.CommandScope.lambda$execute$6(CommandScope.java:278)
+	at liquibase.Scope.child(Scope.java:203)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.command.CommandScope.execute(CommandScope.java:219)
+	at liquibase.integration.commandline.CommandRunner.call(CommandRunner.java:51)
+	at liquibase.integration.commandline.CommandRunner.call(CommandRunner.java:21)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2045)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2465)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2457)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2419)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2277)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2421)
+	at picocli.CommandLine.execute(CommandLine.java:2174)
+	at liquibase.integration.commandline.LiquibaseCommandLine.lambda$execute$2(LiquibaseCommandLine.java:391)
+	at liquibase.Scope.child(Scope.java:203)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.integration.commandline.LiquibaseCommandLine.lambda$execute$3(LiquibaseCommandLine.java:366)
+	at liquibase.Scope.child(Scope.java:203)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.integration.commandline.LiquibaseCommandLine.execute(LiquibaseCommandLine.java:363)
+	at liquibase.integration.commandline.LiquibaseCommandLine.main(LiquibaseCommandLine.java:98)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at liquibase.integration.commandline.LiquibaseLauncher.main(LiquibaseLauncher.java:116)
+Caused by: liquibase.exception.ChangeLogParseException: ERROR: Using include with formatted SQL requires a valid Liquibase Pro key. Get a free license key at https://liquibase.com/trial. Add liquibase.licenseKey=<yourKey> into your defaults file or use --license-key=<yourKey> before your command in the CLI.
+	at com.datical.liquibase.ext.parser.ProFormattedSqlChangeLogParser.handleAdditionalLines(ProFormattedSqlChangeLogParser.java:220)
+	at liquibase.parser.AbstractFormattedChangeLogParser.parse(AbstractFormattedChangeLogParser.java:502)
+	at liquibase.command.core.helpers.DatabaseChangelogCommandStep.lambda$getDatabaseChangeLog$0(DatabaseChangelogCommandStep.java:129)
+	at liquibase.Scope.child(Scope.java:203)
+	at liquibase.Scope.child(Scope.java:179)
+	at liquibase.command.core.helpers.DatabaseChangelogCommandStep.getDatabaseChangeLog(DatabaseChangelogCommandStep.java:128)
+	at liquibase.command.core.helpers.DatabaseChangelogCommandStep.run(DatabaseChangelogCommandStep.java:87)
+	at liquibase.command.CommandScope.lambda$execute$6(CommandScope.java:231)
+	... 24 more
+
+[2026-04-20 16:54:37] INFO [liquibase.ui] Logs saved to liquibase.log
+[2026-04-20 17:04:13] INFO [liquibase.ui] ####################################################
+##   _     _             _ _                      ##
+##  | |   (_)           (_) |                     ##
+##  | |    _  __ _ _   _ _| |__   __ _ ___  ___   ##
+##  | |   | |/ _` | | | | | '_ \ / _` / __|/ _ \  ##
+##  | |___| | (_| | |_| | | |_) | (_| \__ \  __/  ##
+##  \_____/_|\__, |\__,_|_|_.__/ \__,_|___/\___|  ##
+##              | |                               ##
+##              |_|                               ##
+##                                                ## 
+##  Get documentation at docs.liquibase.com       ##
+##  Get certified courses at learn.liquibase.com  ## 
+##                                                ##
+####################################################
+Starting Liquibase at 17:04:13 using Java 21.0.5 (version 4.30.0 #4943 built at 2024-10-31 17:00+0000)
+[2026-04-20 17:04:13] INFO [liquibase.ui] Liquibase Version: 4.30.0
+[2026-04-20 17:04:13] INFO [liquibase.ui] Liquibase Open Source 4.30.0 by Liquibase
+[2026-04-20 17:04:13] INFO [liquibase.integration] Starting command execution.
+[2026-04-20 17:04:13] INFO [liquibase.ui] WARNING: 
+
+Liquibase detected the following invalid LIQUIBASE_* environment variables:
+
+- LIQUIBASE_PASSWORD
+- LIQUIBASE_URL
+- LIQUIBASE_USERNAME
+
+Find the list of valid environment variables at https://docs.liquibase.com/environment-variables
+
+[2026-04-20 17:04:13] WARNING [liquibase.configuration] 
+
+Liquibase detected the following invalid LIQUIBASE_* environment variables:
+
+- LIQUIBASE_PASSWORD
+- LIQUIBASE_URL
+- LIQUIBASE_USERNAME
+
+Find the list of valid environment variables at https://docs.liquibase.com/environment-variables
+
+[2026-04-20 17:04:13] WARNING [liquibase.command] Ignoring the global liquibase.driver value in favor of the command value.
+[2026-04-20 17:04:17] INFO [liquibase.lockservice] Successfully acquired change log lock
+[2026-04-20 17:04:20] INFO [liquibase.changelog] Reading from mop.DATABASECHANGELOG
+[2026-04-20 17:04:21] INFO [liquibase.command] Using deploymentId: 6719061268
+[2026-04-20 17:04:21] INFO [liquibase.changelog] Reading from mop.DATABASECHANGELOG
+[2026-04-20 17:04:21] INFO [liquibase.changelog] Custom SQL executed
+[2026-04-20 17:04:21] INFO [liquibase.changelog] ChangeSet changelog/changes/001_first_select.xml::001::Test ran successfully in 373ms
+[2026-04-20 17:04:22] INFO [liquibase.command] Update command completed successfully.
+[2026-04-20 17:04:22] INFO [liquibase.lockservice] Successfully released change log lock
+[2026-04-20 17:04:22] INFO [liquibase.lockservice] Successfully released change log lock
+[2026-04-20 17:04:23] INFO [liquibase.command] Command execution complete
+[2026-04-20 17:04:24] INFO [liquibase.ui] Logs saved to liquibase.log
+[2026-04-20 17:04:24] INFO [liquibase.ui] Liquibase command 'updateSql' was executed successfully.
+[2026-04-20 17:04:48] INFO [liquibase.ui] ####################################################
+##   _     _             _ _                      ##
+##  | |   (_)           (_) |                     ##
+##  | |    _  __ _ _   _ _| |__   __ _ ___  ___   ##
+##  | |   | |/ _` | | | | | '_ \ / _` / __|/ _ \  ##
+##  | |___| | (_| | |_| | | |_) | (_| \__ \  __/  ##
+##  \_____/_|\__, |\__,_|_|_.__/ \__,_|___/\___|  ##
+##              | |                               ##
+##              |_|                               ##
+##                                                ## 
+##  Get documentation at docs.liquibase.com       ##
+##  Get certified courses at learn.liquibase.com  ## 
+##                                                ##
+####################################################
+Starting Liquibase at 17:04:48 using Java 21.0.5 (version 4.30.0 #4943 built at 2024-10-31 17:00+0000)
+[2026-04-20 17:04:48] INFO [liquibase.ui] Liquibase Version: 4.30.0
+[2026-04-20 17:04:48] INFO [liquibase.ui] Liquibase Open Source 4.30.0 by Liquibase
+[2026-04-20 17:04:48] INFO [liquibase.integration] Starting command execution.
+[2026-04-20 17:04:48] INFO [liquibase.ui] WARNING: 
+
+Liquibase detected the following invalid LIQUIBASE_* environment variables:
+
+- LIQUIBASE_PASSWORD
+- LIQUIBASE_URL
+- LIQUIBASE_USERNAME
+
+Find the list of valid environment variables at https://docs.liquibase.com/environment-variables
+
+[2026-04-20 17:04:48] WARNING [liquibase.configuration] 
+
+Liquibase detected the following invalid LIQUIBASE_* environment variables:
+
+- LIQUIBASE_PASSWORD
+- LIQUIBASE_URL
+- LIQUIBASE_USERNAME
+
+Find the list of valid environment variables at https://docs.liquibase.com/environment-variables
+
+[2026-04-20 17:04:48] WARNING [liquibase.command] Ignoring the global liquibase.driver value in favor of the command value.
+[2026-04-20 17:04:54] INFO [liquibase.changelog] Reading from mop.DATABASECHANGELOG
+[2026-04-20 17:04:56] INFO [liquibase.lockservice] Successfully acquired change log lock
+[2026-04-20 17:04:56] INFO [liquibase.command] Using deploymentId: 6719096693
+[2026-04-20 17:04:56] INFO [liquibase.changelog] Reading from mop.DATABASECHANGELOG
+[2026-04-20 17:04:57] INFO [liquibase.ui] Running Changeset: changelog/changes/001_first_select.xml::001::Test
+[2026-04-20 17:04:57] INFO [liquibase.changelog] Custom SQL executed
+[2026-04-20 17:04:57] INFO [liquibase.changelog] ChangeSet changelog/changes/001_first_select.xml::001::Test ran successfully in 740ms
+[2026-04-20 17:04:58] INFO [liquibase.util] UPDATE SUMMARY
+[2026-04-20 17:04:58] INFO [liquibase.util] Run:                          1
+[2026-04-20 17:04:58] INFO [liquibase.util] Previously run:               0
+[2026-04-20 17:04:58] INFO [liquibase.util] Filtered out:                 0
+[2026-04-20 17:04:58] INFO [liquibase.util] -------------------------------
+[2026-04-20 17:04:58] INFO [liquibase.util] Total change sets:            1
+[2026-04-20 17:04:58] INFO [liquibase.util] Update summary generated
+[2026-04-20 17:04:58] INFO [liquibase.command] Update command completed successfully.
+[2026-04-20 17:04:58] INFO [liquibase.ui] Liquibase: Update has been successful. Rows affected: 1
+[2026-04-20 17:04:58] INFO [liquibase.lockservice] Successfully released change log lock
+[2026-04-20 17:04:58] INFO [liquibase.command] Command execution complete
+[2026-04-20 17:05:00] INFO [liquibase.ui] Logs saved to liquibase.log
+[2026-04-20 17:05:00] INFO [liquibase.ui] Liquibase command 'update' was executed successfully.
+[2026-04-21 07:17:41] INFO [liquibase.ui] ####################################################
+##   _     _             _ _                      ##
+##  | |   (_)           (_) |                     ##
+##  | |    _  __ _ _   _ _| |__   __ _ ___  ___   ##
+##  | |   | |/ _` | | | | | '_ \ / _` / __|/ _ \  ##
+##  | |___| | (_| | |_| | | |_) | (_| \__ \  __/  ##
+##  \_____/_|\__, |\__,_|_|_.__/ \__,_|___/\___|  ##
+##              | |                               ##
+##              |_|                               ##
+##                                                ## 
+##  Get documentation at docs.liquibase.com       ##
+##  Get certified courses at learn.liquibase.com  ## 
+##                                                ##
+####################################################
+Starting Liquibase at 07:17:41 using Java 21.0.5 (version 4.30.0 #4943 built at 2024-10-31 17:00+0000)
+[2026-04-21 07:17:41] INFO [liquibase.ui] Liquibase Version: 4.30.0
+[2026-04-21 07:17:41] INFO [liquibase.ui] Liquibase Open Source 4.30.0 by Liquibase
+[2026-04-21 07:17:41] INFO [liquibase.integration] Starting command execution.
+[2026-04-21 07:17:41] INFO [liquibase.ui] WARNING: 
+
+Liquibase detected the following invalid LIQUIBASE_* environment variables:
+
+- LIQUIBASE_PASSWORD
+- LIQUIBASE_URL
+- LIQUIBASE_USERNAME
+
+Find the list of valid environment variables at https://docs.liquibase.com/environment-variables
+
+[2026-04-21 07:17:41] WARNING [liquibase.configuration] 
+
+Liquibase detected the following invalid LIQUIBASE_* environment variables:
+
+- LIQUIBASE_PASSWORD
+- LIQUIBASE_URL
+- LIQUIBASE_USERNAME
+
+Find the list of valid environment variables at https://docs.liquibase.com/environment-variables
+
+[2026-04-21 07:17:41] WARNING [liquibase.command] Ignoring the global liquibase.driver value in favor of the command value.
+[2026-04-21 07:17:45] INFO [liquibase.lockservice] Successfully acquired change log lock
+[2026-04-21 07:17:48] INFO [liquibase.changelog] Reading from mop.DATABASECHANGELOG
+[2026-04-21 07:17:49] INFO [liquibase.ui] Database is up to date, no changesets to execute
+[2026-04-21 07:17:49] INFO [liquibase.changelog] Reading from mop.DATABASECHANGELOG
+[2026-04-21 07:17:49] INFO [liquibase.lockservice] Successfully released change log lock
+[2026-04-21 07:17:50] INFO [liquibase.lockservice] Successfully released change log lock
+[2026-04-21 07:17:50] INFO [liquibase.command] Command execution complete
+[2026-04-21 07:17:51] INFO [liquibase.ui] Logs saved to liquibase.log
+[2026-04-21 07:17:51] INFO [liquibase.ui] Liquibase command 'updateSql' was executed successfully.
