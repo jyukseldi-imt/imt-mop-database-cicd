@@ -25,4 +25,4 @@ phases:
       - DB_PASS=$(echo "$SECRET_JSON" | jq -r '.password')
   build:
     commands:
-      - ./liquibase/liquibase --classpath=mysql-connector-j.jar --defaultsFile=liquibase.properties --changelog-file=changelog/db.changelog-master.xml --url="jdbc:mysql://${DB_HOST}:${DB_PORT}/${DB_NAME}" --username="${DB_USER}" --password="${DB_PASS}" --label-filter="${LABEL_FILTER}" --contexts="${CONTEXTS}" update
+      - ./liquibase/liquibase --classpath=mysql-connector-j.jar --defaultsFile=liquibase.properties --changelog-file=changelog/db.changelog-master.xml --url="jdbc:mysql://${DB_HOST}:${DB_PORT}/${DB_NAME}" --username="${DB_USER}" --password="${DB_PASS}" update --labels="${LABEL_FILTER}" --contexts="${CONTEXTS}"
